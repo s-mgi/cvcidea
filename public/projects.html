@@ -1,151 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — CVC Group</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<meta name="description" content="Selected retail, hospitality, and commercial projects delivered by CVC Group across Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body class="loading">
-<div class="loader" id="loader"><div class="loader-mark"><div class="mk"><span>C</span><span class="v">V</span><span>C</span></div><div class="sub">GROUP</div><div class="loader-bar"></div></div></div>
-<div class="c-dot"></div><div class="c-ring"></div>
+<body>
 
-<header class="nav">
+<nav class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="logo" aria-label="CVC Group">
-      <img class="logo-img" src="images/logo/cvc.svg" alt="CVC Group" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'" />
-      <span class="logo-text"><span class="mark">C<span class="v">V</span>C</span><span class="rule"></span><span class="sub">GROUP</span></span>
-    </a>
-    <nav><ul class="nav-links">
-      <li><a href="index.html">Home</a></li><li><a href="about.html">Who We Are</a></li>
-      <li><a href="retail.html">Retail</a></li><li><a href="hospitality.html">Hospitality</a></li>
-      <li><a href="commercial.html">Commercial</a></li><li><a href="projects.html" class="active">Projects</a></li>
-    </ul></nav>
-    <a href="contact.html" class="btn-talk">Let's Talk</a>
+    <a href="index.html" class="logo"><span class="logo-mark">C<span>V</span>C</span><span class="logo-sub">Group</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
+      <li><a href="retail.html">Retail</a></li>
+      <li><a href="hospitality.html">Hospitality</a></li>
+      <li><a href="commercial.html">Commercial</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's Talk</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
-</header>
+</nav>
 
-<section class="inner-hero">
-  <div class="bg" style="background-image:url('images/projects/luxe-richmond-lounge.jpg')"></div>
-  <div class="container">
-    <div class="eyebrow">Our Work</div>
-    <h1>Spaces Designed to <span class="em">Be Experienced.</span></h1>
-    <p class="sub">A curated selection of retail, hospitality, and commercial projects — each one a reflection of craft, precision, and partnership.</p>
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80" alt=""></div>
+  <div class="container page-hero-inner">
+    <div class="eyebrow rv">Projects</div>
+    <h1 class="rv rv-d1">Spaces We've<br><span class="italic-accent">Brought to Life.</span></h1>
+    <p class="rv rv-d2">A selection of recent retail, hospitality, and commercial work — each space built around a brand, a budget, and an opening date.</p>
+    <div class="breadcrumb rv rv-d3">Home <span>/</span> Projects</div>
   </div>
 </section>
 
-<section class="project-page">
+<section class="section section-dark">
   <div class="container">
-    <div class="filter-row">
+    <div class="filters rv">
       <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="hospitality">Hospitality</button>
       <button class="filter-btn" data-filter="retail">Retail</button>
+      <button class="filter-btn" data-filter="hospitality">Hospitality</button>
       <button class="filter-btn" data-filter="commercial">Commercial</button>
     </div>
-    <div class="all-projects stg" id="projectGrid">
-      <a href="#" class="project-card" data-cat="hospitality">
-        <div class="ph p1"></div>
-        <img class="ph-img" src="images/projects/luxe-richmond-lounge.jpg" alt="Luxe Richmond Lounge" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Hospitality</div><h4>Luxe Richmond Lounge</h4><span class="view">View Project <span>→</span></span></div>
+
+    <div class="projects-grid">
+      <a href="#" class="proj-card rv" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Luxe Richmond Lounge">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Luxe Richmond Lounge</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="hospitality">
-        <div class="ph p2"></div>
-        <img class="ph-img" src="images/projects/chillax-and-co.jpg" alt="Chillax &amp; Co." onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Hospitality</div><h4>Chillax &amp; Co.</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv rv-d1" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Chillax & Co.">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Chillax &amp; Co.</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="hospitality">
-        <div class="ph p3"></div>
-        <img class="ph-img" src="images/projects/ramonas-kitchen.jpg" alt="Ramona's Kitchen" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Hospitality</div><h4>Ramona's Kitchen</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv rv-d2" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Ramona's Kitchen">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Ramona's Kitchen</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="hospitality">
-        <div class="ph p4"></div>
-        <img class="ph-img" src="images/projects/duo-patisserie-cafe.jpg" alt="Duo Patisserie" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Hospitality</div><h4>Duo Patisserie &amp; Café</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80" alt="Duo Patisserie & Café">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Duo Patisserie &amp; Café</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="retail">
-        <div class="ph p2"></div>
-        <img class="ph-img" src="images/retail/hero.jpg" alt="Retail Build-Out" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Retail</div><h4>Bath &amp; Body Works — Multiple Locations</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv rv-d1" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=800&q=80" alt="LensCrafters Flagship">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">LensCrafters Flagship</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="retail">
-        <div class="ph p1"></div>
-        <img class="ph-img" src="images/retail/interior.jpg" alt="Retail Interior" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Retail</div><h4>Specialty Retail — Flagship Store</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv rv-d2" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Sunglass Hut Rollout">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">Sunglass Hut Rollout</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="commercial">
-        <div class="ph p4"></div>
-        <img class="ph-img" src="images/commercial/exterior.jpg" alt="Commercial" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Commercial</div><h4>Old Forest Lane — Custom Build</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Ray-Ban Toronto">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">Ray-Ban Toronto</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="commercial">
-        <div class="ph p3"></div>
-        <img class="ph-img" src="images/projects/project-5.jpg" alt="Commercial Interior" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Commercial</div><h4>153 Brighton Ave — Full Renovation</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv rv-d1" data-cat="commercial">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Corporate HQ Concord">
+        <div class="proj-body"><span class="proj-cat">Commercial</span><div class="proj-title">Corporate HQ Concord</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
-      <a href="#" class="project-card" data-cat="commercial">
-        <div class="ph p1"></div>
-        <img class="ph-img" src="images/projects/project-6.jpg" alt="Bedroom" onload="this.classList.add('loaded')" onerror="this.remove()" />
-        <div class="gold-line"></div>
-        <div class="body"><div class="tag">Commercial</div><h4>153 Brighton Ave — Master Suite</h4><span class="view">View Project <span>→</span></span></div>
+      <a href="#" class="proj-card rv rv-d2" data-cat="commercial">
+        <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80" alt="Vaughan Medical Centre">
+        <div class="proj-body"><span class="proj-cat">Commercial</span><div class="proj-title">Vaughan Medical Centre</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80" alt="Grill Gate">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">▲ Grill Gate</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d1" data-cat="commercial">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Markham Studio Build">
+        <div class="proj-body"><span class="proj-cat">Commercial</span><div class="proj-title">Markham Studio Build</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d2" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80" alt="Boutique Square One">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">Boutique Square One</div><span class="proj-link">View Project <span>→</span></span></div>
       </a>
     </div>
   </div>
 </section>
 
-<section class="cta" id="contact" style="grid-template-columns:1fr 1fr;">
-  <div class="left stg">
-    <div class="eb">Start a Project</div>
-    <h2>Let's build something amazing.</h2>
-    <p>Tell us about your vision and we'll help bring it to life.</p>
-    <a href="contact.html" class="btn-start">Get in Touch <span>→</span></a>
+<section class="cta-block">
+  <div class="cta-text rv">
+    <div class="eyebrow" style="margin-bottom:18px">Have a Project in Mind?</div>
+    <h2>Let's Build<br>Something <span class="italic-accent">Amazing.</span></h2>
+    <p>Tell us about your vision and our team will help bring it to life.</p>
+    <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Start Your Project <span class="arr">→</span></a>
   </div>
-  <div class="form-wrap">
-    <form class="cta-form rv" onsubmit="event.preventDefault(); alert('Thanks — we will be in touch.');">
-      <input type="text" placeholder="Full Name" required /><input type="tel" placeholder="Phone Number" />
-      <input type="email" placeholder="Email Address*" required />
-      <select required><option value="">Service Required</option><option>Retail</option><option>Hospitality</option><option>Commercial</option></select>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit" class="send">Send Message <span>→</span></button>
-    </form>
+  <div class="cta-img rv rv-d1" style="grid-column:span 2">
+    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1400&q=80" alt="">
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container foot-grid">
-    <div class="foot-logo" id="footLogo"><img class="logo-img" src="images/logo/cvc.svg" alt="CVC Group" onload="this.parentElement.classList.add('has-img')" onerror="this.style.display='none'" /><span class="logo-text"><span class="mark">C<span class="v">V</span>C</span><span class="rule"></span><span class="sub">GROUP</span><span class="foot-tag">RETAIL | HOSPITALITY | COMMERCIAL</span></span></div>
-    <div class="foot-nav"><div class="links"><a href="index.html" class="under-line">Home</a><a href="about.html" class="under-line">Who We Are</a><a href="retail.html" class="under-line">Retail</a><a href="hospitality.html" class="under-line">Hospitality</a><a href="commercial.html" class="under-line">Commercial</a><a href="projects.html" class="under-line">Projects</a><a href="contact.html" class="under-line">Contact</a></div><div class="copyright">© 2025 CVC Group. All Rights Reserved.</div></div>
-    <div class="foot-info"><div class="row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg> +1 (905) 655-2412</div><div class="row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg> info@cvcgrp.com</div><div class="row"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 38 - 411 Four Valley Dr, Concord, ON</div><div class="socials"><a href="#"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.34 17V10.34H6.67V17h1.67M7.5 9.45a.94.94 0 1 0 0-1.89.94.94 0 0 0 0 1.89M18 17v-3.65c0-1.62-.35-2.86-2.23-2.86-.9 0-1.5.5-1.76.97h-.02v-.82h-1.6V17h1.66v-3.3c0-.87.16-1.7 1.24-1.7 1.06 0 1.07.99 1.07 1.76V17H18z"/></svg></a><a href="#"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">C<span>V</span>C</span><span class="logo-sub">Group · Retail | Hospitality | Commercial</span></a>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="who-we-are.html">Who We Are</a><a href="retail.html">Retail</a><a href="hospitality.html">Hospitality</a><a href="commercial.html">Commercial</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+1 (905) 655-2412</div>
+        <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16"/><path d="m22 6-10 7L2 6"/></svg>info@cvcgrp.com</div>
+        <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>38 - 411 Four Valley Dr, Concord, ON L4K 5Z3</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 CVC Group. All Rights Reserved.</div>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      </div>
+    </div>
   </div>
 </footer>
-<a href="#" class="to-top" id="toTop" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 15l-6-6-6 6"/></svg></a>
 
-<script>
-// Filter logic for projects page
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('.all-projects .project-card').forEach(card => {
-      if (filter === 'all' || card.dataset.cat === filter) {
-        card.classList.remove('hide');
-      } else {
-        card.classList.add('hide');
-      }
-    });
-  });
-});
-</script>
-<script src="scripts.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>
