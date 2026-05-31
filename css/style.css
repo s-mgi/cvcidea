@@ -382,17 +382,16 @@ section { position: relative; }
 .brand-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: .35; flex-shrink: 0; }
 
 /* ── HOME CONTACT ────────────────────────────────────────── */
-.home-contact { display: grid; grid-template-columns: 1fr 1fr; min-height: 680px; }
+.home-contact { display: grid; grid-template-columns: 1fr 1fr; min-height: 680px; align-items: stretch; }
 /* Left: bg image + gradient overlay */
 .home-contact-left {
   position: relative; overflow: hidden;
-  min-height: 500px;
   padding: 80px 64px;
   display: flex; flex-direction: column; justify-content: flex-end; gap: 0;
+  align-self: stretch;
 }
 .home-contact-left-bg {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
   background-size: cover; background-position: center; z-index: 0;
 }
 .home-contact-left-bg::after {
