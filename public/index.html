@@ -7,7 +7,7 @@
 <meta name="description" content="CVC Group specializes in the construction and transformation of hospitality, retail, and commercial environments — spaces designed to connect people, elevate brands, and create lasting experiences.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,9 +15,11 @@
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-mark">C<span>V</span>C</span>
-      <span class="logo-sub">Group</span>
+    <!-- New SVG logo -->
+    <a href="index.html" class="logo" aria-label="CVC Group">
+      <img class="logo-svg" src="cvc.svg" alt="CVC Group"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="logo-mark" style="display:none">C<span>V</span>C <span style="font-size:14px;letter-spacing:.3em;color:var(--muted);font-weight:300">Group</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
@@ -78,7 +80,7 @@
       </svg>
     </div>
     <h3>Hospitality</h3>
-    <p>Crafting memorable hospitality spaces that enhance guest experiences and bring hospitality concepts to life.</p>
+    <p>Crafting memorable hospitality spaces that enhance guest experiences and bring concepts to life.</p>
     <a href="hospitality.html" class="link-cta">Explore Hospitality <span>→</span></a>
   </div>
   <div class="tri-item rv rv-d2">
@@ -93,48 +95,74 @@
   </div>
 </section>
 
-<!-- ============ FEATURED PROJECTS ============ -->
-<section class="section section-dark">
+<!-- ============ FEATURED PROJECTS CAROUSEL ============ -->
+<section class="proj-carousel-section">
   <div class="container">
-    <div class="section-head rv">
-      <div class="eyebrow">Featured Projects</div>
-      <h2>Spaces Designed to Be Experienced.</h2>
+    <div class="proj-carousel-header rv">
+      <div class="section-head">
+        <div class="eyebrow">Featured Projects</div>
+        <h2>Spaces Designed to<br>Be Experienced.</h2>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="carousel-counter" id="carouselCounter">01 / 04</span>
+        <button class="carousel-btn" id="carouselNext" aria-label="Next project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
     </div>
-    <div class="proj-grid">
-      <a href="projects.html" class="proj-card rv">
-        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Luxe Richmond Lounge">
-        <div class="proj-body">
-          <span class="proj-cat">Hospitality</span>
-          <div class="proj-title">Luxe Richmond Lounge</div>
-          <span class="proj-link">View Project <span>→</span></span>
+  </div>
+
+  <div class="carousel-viewport" id="carouselViewport">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="proj-card-c is-active">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=900&q=80" alt="Luxe Richmond Lounge">
+        <div class="proj-card-body">
+          <span class="proj-card-num">01.</span>
+          <span class="proj-card-cat">Hospitality</span>
+          <div class="proj-card-title">Luxe Richmond Lounge</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
         </div>
-      </a>
-      <a href="projects.html" class="proj-card rv rv-d1">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Chillax & Co.">
-        <div class="proj-body">
-          <span class="proj-cat">Hospitality</span>
-          <div class="proj-title">Chillax &amp; Co.</div>
-          <span class="proj-link">View Project <span>→</span></span>
+      </div>
+      <div class="proj-card-c">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Chillax & Co.">
+        <div class="proj-card-body">
+          <span class="proj-card-num">02.</span>
+          <span class="proj-card-cat">Hospitality · Café</span>
+          <div class="proj-card-title">Chillax &amp; Co.</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
         </div>
-      </a>
-      <a href="projects.html" class="proj-card rv rv-d2">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Ramona's Kitchen">
-        <div class="proj-body">
-          <span class="proj-cat">Hospitality</span>
-          <div class="proj-title">Ramona's Kitchen</div>
-          <span class="proj-link">View Project <span>→</span></span>
+      </div>
+      <div class="proj-card-c">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="Ramona's Kitchen">
+        <div class="proj-card-body">
+          <span class="proj-card-num">03.</span>
+          <span class="proj-card-cat">Hospitality · Restaurant</span>
+          <div class="proj-card-title">Ramona's Kitchen</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
         </div>
-      </a>
-      <a href="projects.html" class="proj-card rv rv-d3">
-        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80" alt="Duo Patisserie & Café">
-        <div class="proj-body">
-          <span class="proj-cat">Hospitality</span>
-          <div class="proj-title">Duo Patisserie &amp; Café</div>
-          <span class="proj-link">View Project <span>→</span></span>
+      </div>
+      <div class="proj-card-c">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Duo Patisserie & Café">
+        <div class="proj-card-body">
+          <span class="proj-card-num">04.</span>
+          <span class="proj-card-cat">Hospitality · Café</span>
+          <div class="proj-card-title">Duo Patisserie &amp; Café</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
         </div>
-      </a>
+      </div>
     </div>
-    <div style="text-align:center" class="rv">
+  </div>
+
+  <div class="container">
+    <div class="carousel-progress rv">
+      <div class="carousel-progress-track">
+        <div class="carousel-progress-fill" id="carouselProgress" style="width:25%"></div>
+      </div>
+    </div>
+    <div class="proj-carousel-cta rv">
       <a href="projects.html" class="btn btn-ghost">View All Projects <span class="arr">→</span></a>
     </div>
   </div>
@@ -164,26 +192,32 @@
       <div class="approach-item">
         <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 38l8-22 8 22"/><path d="M28 16h12v22H28z"/><path d="M11 30h10"/></svg>
         <h4>Pre-Construction<br>Planning</h4>
+        <p class="approach-desc">We align on scope, budget, and milestones before the first tool is lifted — preventing surprises and protecting your investment from day one.</p>
       </div>
       <div class="approach-item">
         <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="24" cy="24" r="14"/><path d="M24 14v20M19 19h7a3 3 0 0 1 0 6h-4a3 3 0 0 0 0 6h8"/></svg>
         <h4>Budgeting &amp;<br>Value Engineering</h4>
+        <p class="approach-desc">Rigorous cost control without sacrificing quality — we identify smarter solutions that preserve design intent and keep projects on budget.</p>
       </div>
       <div class="approach-item">
         <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="12" y="8" width="24" height="32"/><path d="M18 16h12M18 22h12M18 28h12M18 34h6"/></svg>
         <h4>Permits &amp; Code<br>Coordination</h4>
+        <p class="approach-desc">We navigate every permit, inspection, and compliance requirement — so you never have to worry about what's happening behind the scenes.</p>
       </div>
       <div class="approach-item">
         <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="24" cy="18" r="6"/><path d="M14 40c0-6 4-12 10-12s10 6 10 12"/><path d="M30 16l4-6M18 16l-4-6"/></svg>
         <h4>Construction<br>Management</h4>
+        <p class="approach-desc">Our site teams manage every trade, timeline, and quality checkpoint — keeping the build moving with precision and accountability.</p>
       </div>
       <div class="approach-item">
         <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="10" y="14" width="28" height="22"/><path d="M10 22h28M18 14v22M30 14v22"/></svg>
         <h4>Millwork &amp;<br>Custom Finishes</h4>
+        <p class="approach-desc">From custom casework to precision finishes, our tradespeople bring the details that turn a good build into an exceptional brand environment.</p>
       </div>
       <div class="approach-item">
         <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 24l8 8 16-16"/><circle cx="24" cy="24" r="18"/></svg>
         <h4>Final Turnover &amp;<br>Ongoing Support</h4>
+        <p class="approach-desc">We stay engaged after handover — ensuring your space opens on time, operates as designed, and that any issues are addressed immediately.</p>
       </div>
     </div>
   </div>
@@ -221,49 +255,91 @@
   </div>
 </section>
 
-<!-- ============ BRANDS ============ -->
+<!-- ============ BRANDS — Infinite Marquee ============ -->
 <section class="brands">
-  <div class="container">
-    <div class="brands-head rv">Proudly Building Spaces for Incredible Brands</div>
-    <div class="brands-row rv rv-d1">
-      <div class="brand-logo sans">▲ Grill Gate</div>
-      <div class="brand-logo sans">Ramona's Kitchen</div>
-      <div class="brand-logo">Chillax &amp; Co.</div>
-      <div class="brand-logo sans">DUO</div>
-      <div class="brand-logo sans">LensCrafters</div>
-      <div class="brand-logo sans">○ sunglass hut</div>
-      <div class="brand-logo">Ray-Ban</div>
+  <div class="brands-head rv">Proudly Building Spaces for Incredible Brands</div>
+  <div class="brands-track">
+    <div class="brands-rows">
+      <!-- Row 1: left to right -->
+      <div class="brand-row brand-row-1">
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+        <!-- Duplicate for seamless loop -->
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+      </div>
+      <!-- Row 2: right to left -->
+      <div class="brand-row brand-row-2">
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+        <!-- Duplicate -->
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA BLOCK ============ -->
-<section class="cta-block">
-  <div class="cta-text rv">
-    <div class="eyebrow" style="margin-bottom:18px">Have a Project in Mind?</div>
-    <h2>Let's Build<br>Something <span class="italic-accent">Amazing.</span></h2>
-    <p>Tell us about your vision and our team will help bring it to life.</p>
-    <a href="contact.html" class="btn btn-primary" style="align-self:flex-start">Start Your Project <span class="arr">→</span></a>
-  </div>
-  <div class="cta-img rv rv-d1">
-    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80" alt="Designed space">
-  </div>
-  <div class="cta-form rv rv-d2">
-    <div class="form-grid">
-      <input type="text" class="form-input" placeholder="Full Name">
-      <input type="tel" class="form-input" placeholder="Phone Number">
+<!-- ============ CTA — Cinematic full-bleed ============ -->
+<section class="cta-cinematic">
+  <div class="cta-cinematic-bg" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80')"></div>
+  <div class="cta-cinematic-overlay"></div>
+  <div class="cta-cinematic-inner rv">
+    <div class="cta-cinematic-eyebrow">Have a Project in Mind?</div>
+    <h2 class="cta-cinematic-headline">Let's Build<br><span class="italic-accent">Something Amazing.</span></h2>
+    <p class="cta-cinematic-sub">Tell us about your vision and our team will help bring it to life — from concept coordination through final commissioning.</p>
+    <div class="cta-cinematic-actions">
+      <a href="contact.html" class="btn btn-primary">Start Your Project <span class="arr">→</span></a>
+      <a href="projects.html" class="btn btn-ghost">View Our Work</a>
     </div>
-    <div class="form-grid">
-      <input type="email" class="form-input" placeholder="Email Address*">
-      <select class="form-select">
-        <option>Service Required</option>
-        <option>Retail Build-out</option>
-        <option>Hospitality</option>
-        <option>Commercial</option>
-      </select>
-    </div>
-    <textarea class="form-textarea" placeholder="Your Message"></textarea>
-    <button class="btn btn-primary" style="align-self:flex-start">Send Message <span class="arr">→</span></button>
   </div>
 </section>
 
@@ -271,10 +347,11 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">C<span>V</span>C</span>
-        <span class="logo-sub">Group · Retail | Hospitality | Commercial</span>
-      </a>
+      <div class="footer-logo">
+        <img class="logo-svg" src="cvc.svg" alt="CVC Group"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="logo-mark" style="display:none">C<span>V</span>C</span>
+      </div>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="who-we-are.html">Who We Are</a>
@@ -301,5 +378,91 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+/* ============ PROJECTS CAROUSEL ============ */
+(function() {
+  const track      = document.getElementById('carouselTrack');
+  const viewport   = document.getElementById('carouselViewport');
+  const cards      = Array.from(track.querySelectorAll('.proj-card-c'));
+  const prevBtn    = document.getElementById('carouselPrev');
+  const nextBtn    = document.getElementById('carouselNext');
+  const counterEl  = document.getElementById('carouselCounter');
+  const progressEl = document.getElementById('carouselProgress');
+  const total      = cards.length;
+  let activeIdx    = 0;
+  let busy         = false;
+
+  function getGap() {
+    return parseFloat(window.getComputedStyle(track).gap) || 18;
+  }
+
+  function calcOffset(idx) {
+    const vw  = viewport.getBoundingClientRect().width;
+    const gap = getGap();
+    let off   = 0;
+    for (let i = 0; i < idx; i++) {
+      off += cards[i].getBoundingClientRect().width + gap;
+    }
+    const cw = cards[idx].getBoundingClientRect().width;
+    return Math.max(0, off - (vw - cw) / 2);
+  }
+
+  function update(newIdx) {
+    if (busy) return;
+    busy = true;
+    cards[activeIdx].classList.remove('is-active');
+    activeIdx = ((newIdx % total) + total) % total;
+    cards[activeIdx].classList.add('is-active');
+    // Allow layout to repaint before measuring
+    requestAnimationFrame(() => {
+      track.style.transform = `translateX(-${calcOffset(activeIdx)}px)`;
+      counterEl.textContent =
+        String(activeIdx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      progressEl.style.width = ((activeIdx + 1) / total * 100) + '%';
+      setTimeout(() => { busy = false; }, 900);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => update(activeIdx - 1));
+  nextBtn.addEventListener('click', () => update(activeIdx + 1));
+
+  // Click side cards to focus
+  cards.forEach((c, i) => {
+    c.addEventListener('click', () => { if (i !== activeIdx) update(i); });
+  });
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  update(activeIdx - 1);
+    if (e.key === 'ArrowRight') update(activeIdx + 1);
+  });
+
+  // Touch swipe
+  let tx = 0;
+  viewport.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+  viewport.addEventListener('touchend',   e => {
+    const diff = tx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) update(diff > 0 ? activeIdx + 1 : activeIdx - 1);
+  }, { passive: true });
+
+  // Init — no transition on first paint
+  track.style.transition = 'none';
+  requestAnimationFrame(() => {
+    track.style.transform = `translateX(-${calcOffset(0)}px)`;
+    requestAnimationFrame(() => { track.style.transition = ''; });
+  });
+
+  // Reposition on resize
+  let resizeRaf;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => {
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${calcOffset(activeIdx)}px)`;
+      requestAnimationFrame(() => { track.style.transition = ''; });
+    });
+  });
+})();
+</script>
 </body>
 </html>
