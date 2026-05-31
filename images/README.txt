@@ -1,47 +1,52 @@
 CVC GROUP — Image Replacement Guide
 =====================================
 
-Drop your images into this folder using the exact filenames below.
-Save them as JPG files. The site will use them automatically.
+The site currently loads placeholder images from Unsplash (internet).
+To swap in your own photos, follow these steps:
+
+  1. Save your image as a JPG using the exact filename below
+  2. Drop it into this images/ folder
+  3. Open the relevant HTML file and replace the Unsplash URL
+     with the local path, e.g.:
+       FROM:  https://images.unsplash.com/photo-xxxx?w=1920&q=80
+       TO:    images/hero-slide-1.jpg
+
+Or just send us your images and we'll do the swap for you.
+
+IMAGE SLOTS
+-----------
 
 HOMEPAGE
---------
-hero-slide-1.jpg      Hero carousel — Slide 1  (recommended: 1920×1080, hospitality/lounge interior)
-hero-slide-2.jpg      Hero carousel — Slide 2  (recommended: 1920×1080, restaurant interior)
-hero-slide-3.jpg      Hero carousel — Slide 3  (recommended: 1920×1080, commercial interior)
-philosophy-split.jpg  Philosophy section — right column image  (recommended: 1200×900)
-about-feature-1.jpg   About section — left image card  (recommended: 900×1100)
-contact-bg.jpg        Homepage contact section — background image  (recommended: 1400×900)
+  hero-slide-1.jpg        Hero carousel — Slide 1       (1920×1080 recommended)
+  hero-slide-2.jpg        Hero carousel — Slide 2       (1920×1080 recommended)
+  hero-slide-3.jpg        Hero carousel — Slide 3       (1920×1080 recommended)
+  contact-bg.jpg          Contact section background    (1400×900 recommended)
+  philosophy-split.jpg    Philosophy split section      (1200×900 recommended)
+  about-feature-1.jpg     About feature — left card     (900×1100 recommended)
 
-WHO WE ARE PAGE
----------------
-team-office.jpg       Our Story section image  (recommended: 900×1100)
-office-interior.jpg   Page hero background — also used on Contact + Commercial pages  (recommended: 1920×1080)
-timeline-2003.jpg     Timeline milestone — 2003: Founded  (recommended: 700×440)
-timeline-2009.jpg     Timeline milestone — 2009: National Brands  (recommended: 700×440)
-timeline-2014.jpg     Timeline milestone — 2014: Hospitality Launch  (recommended: 700×440)
-timeline-2019.jpg     Timeline milestone — 2019: Commercial Expansion  (recommended: 700×440)
+WHO WE ARE
+  office-interior.jpg     Page hero (also Contact + Commercial) (1920×1080)
+  team-office.jpg         Our Story section image        (900×1100 recommended)
+  timeline-2003.jpg       Timeline — 2003: Founded       (800×500 recommended)
+  timeline-2009.jpg       Timeline — 2009: National Brands
+  timeline-2014.jpg       Timeline — 2014: Hospitality Launch
+  timeline-2019.jpg       Timeline — 2019: Commercial Expansion
 
-RETAIL PAGE
------------
-retail-hero.jpg       Retail page hero + page CTA background  (recommended: 1920×1080)
-retail-showcase-1.jpg Retail showcase card 1 + Projects grid  (recommended: 800×1000)
-retail-showcase-2.jpg Retail showcase card 2 + Projects grid  (recommended: 800×1000)
+RETAIL
+  retail-hero.jpg         Retail page hero + CTA         (1920×1080 recommended)
+  retail-showcase-1.jpg   Retail showcase card 1         (800×1000 recommended)
+  retail-showcase-2.jpg   Retail showcase card 2         (800×1000 recommended)
 
-HOSPITALITY PAGE
-----------------
-hospitality-lounge.jpg    Featured project — Luxe Richmond Lounge + Projects grid  (recommended: 900×1200)
-hospitality-showcase-1.jpg  Hospitality showcase card + Projects grid  (recommended: 800×1000)
+HOSPITALITY
+  hospitality-lounge.jpg      Featured project image     (900×1200 recommended)
+  hospitality-showcase-1.jpg  Hospitality showcase       (800×1000 recommended)
 
-COMMERCIAL PAGE
----------------
-commercial-showcase-1.jpg  Commercial showcase card + Projects grid  (recommended: 800×1000)
+COMMERCIAL
+  commercial-showcase-1.jpg   Commercial showcase        (800×1000 recommended)
 
 TIPS
-----
-- File names are case-sensitive. Use lowercase only.
-- JPG format recommended for photos. PNG works too if needed.
-- Keep file sizes under 500KB where possible for fast loading.
-- The site uses the same image at different sizes — one file covers all uses.
-- The logo file (cvc.svg) is in the root /public/ folder, not here.
+  - File names must be lowercase, exact match
+  - JPG or PNG both work
+  - Keep files under 500KB for fast load times
+  - The logo (cvc.svg) lives in the root /public/ folder, not here
 
