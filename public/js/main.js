@@ -88,3 +88,49 @@ filterBtns.forEach(btn => {
     });
   });
 });
+
+/* ============ TIMELINE REVEAL ============ */
+const tlItems = document.querySelectorAll('.tl-alt-item');
+if (tlItems.length) {
+  const tlIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        tlIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  tlItems.forEach(el => tlIO.observe(el));
+}
+
+/* ============ ABOUT FEATURE COUNTER ============ */
+const afNums = document.querySelectorAll('.about-feature-big-num[data-count]');
+if (afNums.length) {
+  const afIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur = 1600;
+      const start = performance.now();
+      function step(t) {
+        const p = Math.min((t - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(step);
+      afIO.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  afNums.forEach(n => afIO.observe(n));
+}
+
+/* ============ HOME CONTACT FORM ============ */
+const homeForm = document.querySelector('.home-contact-form');
+homeForm?.addEventListener('submit', e => {
+  e.preventDefault();
+  homeForm.innerHTML = '<p style="color:var(--gold);font-size:15px;line-height:1.7">Thank you — we\'ll be in touch shortly.</p>';
+});

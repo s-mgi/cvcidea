@@ -223,6 +223,33 @@
   </div>
 </section>
 
+
+<!-- ============ ABOUT FEATURE — Reference section after services ============ -->
+<section class="about-feature">
+  <div class="about-feature-inner">
+    <div class="about-feature-text stagger-rv">
+      <div class="about-feature-started rv">Started in 2003</div>
+      <h2 class="about-feature-headline rv">We Build <em>Commercial Spaces,</em><br>Crafting Lasting And<br>Inspiring Environments</h2>
+      <div class="about-feature-stat-row rv">
+        <div class="about-feature-big-num" data-count="22" data-suffix="">0</div>
+        <div class="about-feature-stat-label">Years of<br>experience</div>
+      </div>
+    </div>
+    <div class="about-feature-right rv rv-d1">
+      <div class="about-feature-images">
+        <div class="about-feature-img">
+          <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80" alt="CVC interior project">
+        </div>
+        <div class="about-feature-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="CVC hospitality project">
+        </div>
+      </div>
+      <p class="about-feature-body">We believe that every space has the power to inspire, and that great construction delivers. Our mission is to craft environments that drive business results, create connection, and reflect the brands who inhabit them.</p>
+      <a href="who-we-are.html" class="btn btn-dark" style="align-self:flex-start">More About Us <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ STATS ============ -->
 <section class="stats">
   <svg class="stats-bg" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width=".6">
@@ -328,18 +355,49 @@
   </div>
 </section>
 
-<!-- ============ CTA — Cinematic full-bleed ============ -->
-<section class="cta-cinematic">
-  <div class="cta-cinematic-bg" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80')"></div>
-  <div class="cta-cinematic-overlay"></div>
-  <div class="cta-cinematic-inner rv">
-    <div class="cta-cinematic-eyebrow">Have a Project in Mind?</div>
-    <h2 class="cta-cinematic-headline">Let's Build<br><span class="italic-accent">Something Amazing.</span></h2>
-    <p class="cta-cinematic-sub">Tell us about your vision and our team will help bring it to life — from concept coordination through final commissioning.</p>
-    <div class="cta-cinematic-actions">
-      <a href="contact.html" class="btn btn-primary">Start Your Project <span class="arr">→</span></a>
-      <a href="projects.html" class="btn btn-ghost">View Our Work</a>
+<!-- ============ CONTACT — Premium split with form ============ -->
+<section class="home-contact" id="contact">
+  <div class="home-contact-left rv">
+    <div class="eyebrow">Have a Project in Mind?</div>
+    <h2>Let's Build<br><span class="italic-accent">Something Amazing.</span></h2>
+    <p>Tell us about your vision and our team will help bring it to life — from concept coordination through final commissioning.</p>
+    <a href="contact.html" class="btn btn-ghost" style="align-self:flex-start">View Full Contact <span class="arr">→</span></a>
+    <div class="home-contact-info">
+      <div class="home-contact-info-row">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+19056552412">+1 (905) 655-2412</a>
+      </div>
+      <div class="home-contact-info-row">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16"/><path d="m22 6-10 7L2 6"/></svg>
+        <a href="mailto:info@cvcgrp.com">info@cvcgrp.com</a>
+      </div>
+      <div class="home-contact-info-row">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>38 – 411 Four Valley Dr, Concord, ON L4K 5Z3</span>
+      </div>
     </div>
+  </div>
+  <div class="home-contact-right rv rv-d1">
+    <h3>Send Us a Message</h3>
+    <form class="home-contact-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:var(--gold);font-size:15px&quot;>Thanks — we\'ll be in touch shortly.</p>'">
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="Full Name" required>
+        <input type="tel" class="form-input" placeholder="Phone Number">
+      </div>
+      <div class="form-row">
+        <input type="email" class="form-input" placeholder="Email Address *" required>
+        <select class="form-select">
+          <option value="">Service Required</option>
+          <option>Retail Build-out</option>
+          <option>Hospitality Construction</option>
+          <option>Commercial Construction</option>
+          <option>Renovation / Tenant Improvement</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <textarea class="form-textarea" placeholder="Tell us about your project"></textarea>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message <span class="arr">→</span></button>
+    </form>
   </div>
 </section>
 
