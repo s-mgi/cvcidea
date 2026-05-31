@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who We Are — CVC Group</title>
+<title>CVC Group — We Build Spaces That Bring Life to Brands</title>
+<meta name="description" content="CVC Group specializes in the construction and transformation of hospitality, retail, and commercial environments — spaces designed to connect people, elevate brands, and create lasting experiences.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -11,12 +12,18 @@
 </head>
 <body>
 
+<!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="logo"><img class="logo-svg" src="cvc.svg" alt="CVC Group" onerror="this.style.display='none'"></a>
+    <!-- New SVG logo -->
+    <a href="index.html" class="logo" aria-label="CVC Group">
+      <img class="logo-svg" src="cvc.svg" alt="CVC Group"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="logo-mark" style="display:none">C<span>V</span>C <span style="font-size:14px;letter-spacing:.3em;color:var(--muted);font-weight:300">Group</span></span>
+    </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="who-we-are.html" class="active">Who We Are</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
       <li><a href="retail.html">Retail</a></li>
       <li><a href="hospitality.html">Hospitality</a></li>
       <li><a href="commercial.html">Commercial</a></li>
@@ -27,192 +34,414 @@
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt=""></div>
-  <div class="container page-hero-inner">
-    <div class="eyebrow rv">Who We Are</div>
-    <h1 class="rv rv-d1">Two Decades of Building<br><span class="italic-accent">Spaces That Matter.</span></h1>
-    <p class="rv rv-d2">CVC Group is a Concord, Ontario-based construction company with 22+ years of experience delivering exceptional retail, hospitality, and commercial environments across Canada.</p>
-    <div class="breadcrumb rv rv-d3">Home <span>/</span> Who We Are</div>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1920&q=80')"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-tags rv">Retail <span>|</span> Hospitality <span>|</span> Commercial</div>
+    <h1 class="hero-title rv rv-d1">We Build Spaces<br><span class="italic-accent">That Bring</span><br>Life to Brands.</h1>
+    <p class="hero-sub rv rv-d2">CVC Group specializes in the construction and transformation of hospitality, retail, and commercial environments — spaces designed to connect people, elevate brands, and create lasting experiences.</p>
+    <div class="hero-actions rv rv-d3">
+      <a href="projects.html" class="btn btn-primary">View Our Work <span class="arr">→</span></a>
+      <a href="#services" class="btn btn-ghost">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <button class="hero-dot active">01</button>
+    <button class="hero-dot">02</button>
+    <button class="hero-dot">03</button>
+  </div>
+  <div class="hero-arrows">
+    <button class="hero-arrow prev" aria-label="Previous">←</button>
+    <button class="hero-arrow next active" aria-label="Next">→</button>
   </div>
 </section>
 
-<!-- OUR STORY -->
-<section class="section">
+<!-- ============ SERVICE TRIPTYCH ============ -->
+<section id="services" class="tri">
+  <div class="tri-item rv">
+    <div class="tri-icon">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" width="48" height="48">
+        <path d="M12 18h24l-2 22H14L12 18Z"/><path d="M18 18v-4a6 6 0 0 1 12 0v4"/><circle cx="18" cy="26" r=".8" fill="currentColor"/><circle cx="30" cy="26" r=".8" fill="currentColor"/>
+      </svg>
+    </div>
+    <h3>Retail</h3>
+    <p>Thoughtfully built retail environments that attract, engage, and keep customers coming back.</p>
+    <a href="retail.html" class="link-cta">Explore Retail <span>→</span></a>
+  </div>
+  <div class="tri-item rv rv-d1">
+    <div class="tri-icon">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" width="48" height="48">
+        <path d="M8 32c0-8 7-14 16-14s16 6 16 14"/><path d="M6 32h36"/><path d="M24 18v-4"/><path d="M22 14h4"/>
+      </svg>
+    </div>
+    <h3>Hospitality</h3>
+    <p>Crafting memorable hospitality spaces that enhance guest experiences and bring concepts to life.</p>
+    <a href="hospitality.html" class="link-cta">Explore Hospitality <span>→</span></a>
+  </div>
+  <div class="tri-item rv rv-d2">
+    <div class="tri-icon">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" width="48" height="48">
+        <path d="M10 40V14l14-6 14 6v26"/><path d="M10 40h28"/><rect x="16" y="18" width="4" height="4"/><rect x="28" y="18" width="4" height="4"/><rect x="16" y="26" width="4" height="4"/><rect x="28" y="26" width="4" height="4"/><rect x="20" y="32" width="8" height="8"/>
+      </svg>
+    </div>
+    <h3>Commercial</h3>
+    <p>Functional, future-ready commercial spaces designed to support people, performance, and growth.</p>
+    <a href="commercial.html" class="link-cta">Explore Commercial <span>→</span></a>
+  </div>
+</section>
+
+<!-- ============ FEATURED PROJECTS CAROUSEL ============ -->
+<section class="proj-carousel-section">
   <div class="container">
-    <div class="two-col">
-      <div class="two-col-img rv">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80" alt="CVC Group team">
+    <div class="proj-carousel-header rv">
+      <div class="section-head">
+        <div class="eyebrow">Featured Projects</div>
+        <h2>Spaces Designed to<br>Be Experienced.</h2>
       </div>
-      <div class="two-col-text rv rv-d1">
-        <div class="eyebrow">Our Story</div>
-        <h2>Craftsmanship Backed<br>By <span class="italic-accent">Experience.</span></h2>
-        <p>For over 22 years, CVC Group has partnered with some of Canada's most recognized brands to design and build the environments where their stories come to life. From boutique retail to high-volume hospitality and complex commercial fit-outs, we've built our reputation one space at a time.</p>
-        <p>What started as a small team of trades has grown into a full-service construction partner — 265+ skilled tradespeople strong — with the depth to handle every phase from pre-construction planning to final turnover.</p>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="carousel-counter" id="carouselCounter">01 / 04</span>
+        <button class="carousel-btn" id="carouselNext" aria-label="Next project">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-viewport" id="carouselViewport">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="proj-card-c is-active">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=900&q=80" alt="Luxe Richmond Lounge">
+        <div class="proj-card-body">
+          <span class="proj-card-num">01.</span>
+          <span class="proj-card-cat">Hospitality</span>
+          <div class="proj-card-title">Luxe Richmond Lounge</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
+        </div>
+      </div>
+      <div class="proj-card-c">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Chillax & Co.">
+        <div class="proj-card-body">
+          <span class="proj-card-num">02.</span>
+          <span class="proj-card-cat">Hospitality · Café</span>
+          <div class="proj-card-title">Chillax &amp; Co.</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
+        </div>
+      </div>
+      <div class="proj-card-c">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80" alt="Ramona's Kitchen">
+        <div class="proj-card-body">
+          <span class="proj-card-num">03.</span>
+          <span class="proj-card-cat">Hospitality · Restaurant</span>
+          <div class="proj-card-title">Ramona's Kitchen</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
+        </div>
+      </div>
+      <div class="proj-card-c">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&q=80" alt="Duo Patisserie & Café">
+        <div class="proj-card-body">
+          <span class="proj-card-num">04.</span>
+          <span class="proj-card-cat">Hospitality · Café</span>
+          <div class="proj-card-title">Duo Patisserie &amp; Café</div>
+          <a href="projects.html" class="proj-card-link">View Project <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="carousel-progress rv">
+      <div class="carousel-progress-track">
+        <div class="carousel-progress-fill" id="carouselProgress" style="width:25%"></div>
+      </div>
+    </div>
+    <div class="proj-carousel-cta rv">
+      <a href="projects.html" class="btn btn-ghost">View All Projects <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY SPLIT ============ -->
+<section class="split">
+  <div class="split-text rv">
+    <div class="eyebrow">Our Philosophy</div>
+    <h2>We create spaces<br>that bring out <span class="italic-accent">life.</span></h2>
+    <p>Great spaces do more than look beautiful — they inspire connection, spark emotion, and leave a lasting impression.</p>
+    <a href="who-we-are.html" class="link-cta">Learn More About Us <span>→</span></a>
+  </div>
+  <div class="split-img rv rv-d1">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80" alt="Interior space">
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="approach">
+  <div class="container">
+    <div class="approach-head rv">
+      <div class="eyebrow">Our Approach</div>
+      <h2>Built with Precision. Delivered with Purpose.</h2>
+    </div>
+    <div class="approach-grid rv rv-d1">
+
+      <div class="approach-item">
+        <div class="approach-front">
+          <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 38l8-22 8 22"/><path d="M28 16h12v22H28z"/><path d="M11 30h10"/></svg>
+          <h4>Pre-Construction<br>Planning</h4>
+        </div>
+        <div class="approach-back">
+          <h4>Pre-Construction<br>Planning</h4>
+          <p class="approach-desc">Scope, budget, and milestones locked before the first tool is lifted — protecting your investment from day one.</p>
+        </div>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-front">
+          <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="24" cy="24" r="14"/><path d="M24 14v20M19 19h7a3 3 0 0 1 0 6h-4a3 3 0 0 0 0 6h8"/></svg>
+          <h4>Budgeting &amp;<br>Value Engineering</h4>
+        </div>
+        <div class="approach-back">
+          <h4>Budgeting &amp;<br>Value Engineering</h4>
+          <p class="approach-desc">Cost control without sacrificing design — smarter solutions that preserve intent and keep the number real.</p>
+        </div>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-front">
+          <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="12" y="8" width="24" height="32"/><path d="M18 16h12M18 22h12M18 28h12M18 34h6"/></svg>
+          <h4>Permits &amp; Code<br>Coordination</h4>
+        </div>
+        <div class="approach-back">
+          <h4>Permits &amp; Code<br>Coordination</h4>
+          <p class="approach-desc">Every permit, inspection, and compliance requirement handled — you never worry about what's behind the scenes.</p>
+        </div>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-front">
+          <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="24" cy="18" r="6"/><path d="M14 40c0-6 4-12 10-12s10 6 10 12"/><path d="M30 16l4-6M18 16l-4-6"/></svg>
+          <h4>Construction<br>Management</h4>
+        </div>
+        <div class="approach-back">
+          <h4>Construction<br>Management</h4>
+          <p class="approach-desc">Full trade and timeline ownership — every checkpoint managed with precision and direct accountability.</p>
+        </div>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-front">
+          <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="10" y="14" width="28" height="22"/><path d="M10 22h28M18 14v22M30 14v22"/></svg>
+          <h4>Millwork &amp;<br>Custom Finishes</h4>
+        </div>
+        <div class="approach-back">
+          <h4>Millwork &amp;<br>Custom Finishes</h4>
+          <p class="approach-desc">The details guests touch are where good builds become memorable ones. We treat every finish as a feature.</p>
+        </div>
+      </div>
+
+      <div class="approach-item">
+        <div class="approach-front">
+          <svg class="approach-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 24l8 8 16-16"/><circle cx="24" cy="24" r="18"/></svg>
+          <h4>Final Turnover &amp;<br>Ongoing Support</h4>
+        </div>
+        <div class="approach-back">
+          <h4>Final Turnover &amp;<br>Ongoing Support</h4>
+          <p class="approach-desc">We stay engaged post-handover — your space opens on time and keeps performing exactly as designed.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ ABOUT FEATURE — Reference section after services ============ -->
+<section class="about-feature">
+  <div class="about-feature-inner">
+    <div class="about-feature-text stagger-rv">
+      <div class="about-feature-started rv">Started in 2003</div>
+      <h2 class="about-feature-headline rv">We Build <em>Commercial Spaces,</em><br>Crafting Lasting And<br>Inspiring Environments</h2>
+      <div class="about-feature-stat-row rv">
+        <div class="about-feature-big-num" data-count="22" data-suffix="">0</div>
+        <div class="about-feature-stat-label">Years of<br>experience</div>
+      </div>
+    </div>
+    <div class="about-feature-right rv rv-d1">
+      <div class="about-feature-images">
+        <div class="about-feature-img">
+          <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80" alt="CVC interior project">
+        </div>
+        <div class="about-feature-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="CVC hospitality project">
+        </div>
+      </div>
+      <p class="about-feature-body">We believe that every space has the power to inspire, and that great construction delivers. Our mission is to craft environments that drive business results, create connection, and reflect the brands who inhabit them.</p>
+      <a href="who-we-are.html" class="btn btn-dark" style="align-self:flex-start">More About Us <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <svg class="stats-bg" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width=".6">
+    <path d="M50 250h300M50 250V150l50-40 50 40v100M150 250V130l50-30 50 30v120M250 250V160l50-30 50 30v90"/>
+    <path d="M70 250v-80h20v80M110 250v-60h20v60M170 250v-90h20v90M210 250v-80h20v80M270 250v-70h20v70M310 250v-60h20v60"/>
+  </svg>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="rv">
+        <div class="stat-num"><span data-count="22">0</span><span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+        <p class="stat-desc">Delivering spaces with expertise built over two decades.</p>
+      </div>
+      <div class="rv rv-d1">
+        <div class="stat-num"><span data-count="189">0</span><span>+</span></div>
+        <div class="stat-label">Projects Completed</div>
+        <p class="stat-desc">Successfully delivering a wide range of retail, hospitality &amp; commercial projects.</p>
+      </div>
+      <div class="rv rv-d2">
+        <div class="stat-num"><span data-count="265">0</span><span>+</span></div>
+        <div class="stat-label">Skilled Tradespeople</div>
+        <p class="stat-desc">Dedicated professionals ensuring exceptional craftsmanship every time.</p>
+      </div>
+      <div class="rv rv-d3">
+        <div class="stat-num"><span data-count="328">0</span><span>+</span></div>
+        <div class="stat-label">Client Satisfaction</div>
+        <p class="stat-desc">Long-term partnerships built on trust, quality and results.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="section section-dark">
-  <div class="container">
-    <div class="section-head rv">
-      <div class="eyebrow">What We Stand For</div>
-      <h2>The Values That Guide Every Build.</h2>
+<!-- ============ BRANDS — Infinite Marquee ============ -->
+<section class="brands">
+  <div class="brands-head rv">Proudly Building Spaces for Incredible Brands</div>
+  <div class="brands-track">
+    <div class="brands-rows">
+      <!-- Row 1: left to right -->
+      <div class="brand-row brand-row-1">
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+        <!-- Duplicate for seamless loop -->
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+      </div>
+      <!-- Row 2: right to left -->
+      <div class="brand-row brand-row-2">
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+        <!-- Duplicate -->
+        <span class="brand-logo sans">○ sunglass hut</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ray-Ban</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">LensCrafters</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">DUO</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Chillax &amp; Co.</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo">Ramona's Kitchen</span>
+        <span class="brand-sep"></span>
+        <span class="brand-logo sans">▲ Grill Gate</span>
+        <span class="brand-sep"></span>
+      </div>
     </div>
-    <div class="values">
-      <div class="value rv">
-        <div class="value-num">01</div>
-        <h3>Precision</h3>
-        <p>Every joint, finish, and detail is held to a standard that survives daily use and customer scrutiny — because spaces that feel "almost right" never do.</p>
-      </div>
-      <div class="value rv rv-d1">
-        <div class="value-num">02</div>
-        <h3>Partnership</h3>
-        <p>We work as an extension of your team. Transparent budgets, honest timelines, and proactive communication from kickoff through handover.</p>
-      </div>
-      <div class="value rv rv-d2">
-        <div class="value-num">03</div>
-        <h3>Pace</h3>
-        <p>Retail and hospitality run on opening dates. Our scheduling discipline and trade depth let us hit them — without cutting corners.</p>
-      </div>
-      <div class="value rv rv-d3">
-        <div class="value-num">04</div>
-        <h3>Craft</h3>
-        <p>Millwork, finishes, and feature installs are where good spaces become unforgettable ones. We sweat the parts that guests touch.</p>
-      </div>
-      <div class="value rv rv-d4">
-        <div class="value-num">05</div>
-        <h3>Continuity</h3>
-        <p>The same project lead from day one through punch-list. No handoffs that lose context, no relearning your brand mid-build.</p>
-      </div>
-      <div class="value rv rv-d4">
-        <div class="value-num">06</div>
-        <h3>Support</h3>
-        <p>The relationship doesn't end at turnover. Ongoing service ensures every space we deliver keeps performing for years.</p>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- TIMELINE — Alternating -->
-<section class="section section-dark" style="padding-bottom:0">
-  <div class="container">
-    <div class="section-head rv">
-      <div class="eyebrow">Our Journey</div>
-      <h2>Milestones Along the Way.</h2>
-    </div>
+<!-- ============ CONTACT — Premium split with form ============ -->
+<section class="home-contact" id="contact">
+  <div class="home-contact-left rv">
+    <div class="home-contact-left-bg" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80')"></div>
+    <div class="eyebrow">Have a Project in Mind?</div>
+    <h2>Let's Build<br><span class="italic-accent">Something Amazing.</span></h2>
+    <p>Tell us about your vision and our team will help bring it to life.</p>
+    <a href="contact.html" class="btn btn-ghost" style="align-self:flex-start">Get in Touch <span class="arr">→</span></a>
+  </div>
+  <div class="home-contact-right rv rv-d1">
+    <h3>Send Us a Message</h3>
+    <form class="home-contact-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=&quot;color:var(--gold);font-size:15px&quot;>Thanks — we\'ll be in touch shortly.</p>'">
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="Full Name" required>
+        <input type="tel" class="form-input" placeholder="Phone Number">
+      </div>
+      <div class="form-row">
+        <input type="email" class="form-input" placeholder="Email Address *" required>
+        <select class="form-select">
+          <option value="">Service Required</option>
+          <option>Retail Build-out</option>
+          <option>Hospitality Construction</option>
+          <option>Commercial Construction</option>
+          <option>Renovation / Tenant Improvement</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <textarea class="form-textarea" placeholder="Tell us about your project"></textarea>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message <span class="arr">→</span></button>
+    </form>
   </div>
 </section>
 
-<section class="section section-dark" style="padding-top:0">
-  <div class="container">
-    <div class="timeline-alt">
-
-      <!-- 2003 — LEFT: content, RIGHT: image -->
-      <div class="tl-alt-item left rv">
-        <div class="tl-content">
-          <span class="tl-year-badge">2003</span>
-          <h4>CVC Group is Founded</h4>
-          <p>Started in Concord, Ontario with a small, focused crew and an uncompromising approach to quality retail fit-outs for local businesses.</p>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Founding">
-          </div>
-        </div>
-      </div>
-
-      <!-- 2009 — RIGHT: content, LEFT: image -->
-      <div class="tl-alt-item right rv">
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="National brands">
-          </div>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-content">
-          <span class="tl-year-badge">2009</span>
-          <h4>First National Brand Partnership</h4>
-          <p>Began long-term partnerships with multi-location retailers, expanding our capabilities and team depth across Ontario.</p>
-        </div>
-      </div>
-
-      <!-- 2014 — LEFT: content, RIGHT: image -->
-      <div class="tl-alt-item left rv">
-        <div class="tl-content">
-          <span class="tl-year-badge">2014</span>
-          <h4>Hospitality Division Launched</h4>
-          <p>Added dedicated hospitality expertise — restaurants, cafés, and lounges — bringing the finish quality and speed that opening-driven projects demand.</p>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Hospitality">
-          </div>
-        </div>
-      </div>
-
-      <!-- 2019 — RIGHT: stat card, LEFT: image -->
-      <div class="tl-alt-item right rv">
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Commercial">
-          </div>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-content">
-          <span class="tl-year-badge">2019</span>
-          <h4>Commercial Expansion</h4>
-          <p>Scaled into commercial interiors and office build-outs, completing our three-pillar service offering: retail, hospitality, commercial.</p>
-        </div>
-      </div>
-
-      <!-- 2025 — LEFT: content, RIGHT: stat card -->
-      <div class="tl-alt-item left rv">
-        <div class="tl-content">
-          <span class="tl-year-badge">2025</span>
-          <h4>189+ Projects Delivered</h4>
-          <p>Continuing to build long-term partnerships with brands across Canada. 265+ skilled tradespeople and counting — still building spaces that matter.</p>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-visual">
-          <div class="tl-stat-card">
-            <div class="tl-stat-num">189+</div>
-            <div class="tl-stat-label">Projects Delivered</div>
-            <div style="margin-top:20px;height:1px;background:var(--line)"></div>
-            <div class="tl-stat-num" style="margin-top:20px;font-size:clamp(32px,4vw,48px)">265+</div>
-            <div class="tl-stat-label">Skilled Tradespeople</div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /timeline-alt -->
-  </div>
-</section>
-
-<!-- PAGE CTA — Rebalanced -->
-<section class="page-cta">
-  <div class="page-cta-img rv">
-    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80" alt="Modern interior">
-  </div>
-  <div class="page-cta-content rv rv-d1">
-    <div class="eyebrow">Ready to Work Together?</div>
-    <h2>Let's Build<br><span class="italic-accent">Something Great.</span></h2>
-    <p>Tell us about your vision and our team will help bring it to life — from concept through final turnover.</p>
-    <a href="contact.html" class="btn btn-primary">Start Your Project <span class="arr">→</span></a>
-  </div>
-</section>
-
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
-      <a href="index.html" class="logo"><img class="logo-svg" src="cvc.svg" alt="CVC Group" onerror="this.style.display='none'"></a>
+      <div class="footer-logo">
+        <img class="logo-svg" src="cvc.svg" alt="CVC Group"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="logo-mark" style="display:none">C<span>V</span>C</span>
+      </div>
       <div class="footer-links">
-        <a href="index.html">Home</a><a href="who-we-are.html">Who We Are</a><a href="retail.html">Retail</a><a href="hospitality.html">Hospitality</a><a href="commercial.html">Commercial</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="retail.html">Retail</a>
+        <a href="hospitality.html">Hospitality</a>
+        <a href="commercial.html">Commercial</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-contact">
         <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+1 (905) 655-2412</div>
@@ -231,5 +460,91 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+/* ============ PROJECTS CAROUSEL ============ */
+(function() {
+  const track      = document.getElementById('carouselTrack');
+  const viewport   = document.getElementById('carouselViewport');
+  const cards      = Array.from(track.querySelectorAll('.proj-card-c'));
+  const prevBtn    = document.getElementById('carouselPrev');
+  const nextBtn    = document.getElementById('carouselNext');
+  const counterEl  = document.getElementById('carouselCounter');
+  const progressEl = document.getElementById('carouselProgress');
+  const total      = cards.length;
+  let activeIdx    = 0;
+  let busy         = false;
+
+  function getGap() {
+    return parseFloat(window.getComputedStyle(track).gap) || 18;
+  }
+
+  function calcOffset(idx) {
+    const vw  = viewport.getBoundingClientRect().width;
+    const gap = getGap();
+    let off   = 0;
+    for (let i = 0; i < idx; i++) {
+      off += cards[i].getBoundingClientRect().width + gap;
+    }
+    const cw = cards[idx].getBoundingClientRect().width;
+    return Math.max(0, off - (vw - cw) / 2);
+  }
+
+  function update(newIdx) {
+    if (busy) return;
+    busy = true;
+    cards[activeIdx].classList.remove('is-active');
+    activeIdx = ((newIdx % total) + total) % total;
+    cards[activeIdx].classList.add('is-active');
+    // Allow layout to repaint before measuring
+    requestAnimationFrame(() => {
+      track.style.transform = `translateX(-${calcOffset(activeIdx)}px)`;
+      counterEl.textContent =
+        String(activeIdx + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+      progressEl.style.width = ((activeIdx + 1) / total * 100) + '%';
+      setTimeout(() => { busy = false; }, 900);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => update(activeIdx - 1));
+  nextBtn.addEventListener('click', () => update(activeIdx + 1));
+
+  // Click side cards to focus
+  cards.forEach((c, i) => {
+    c.addEventListener('click', () => { if (i !== activeIdx) update(i); });
+  });
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  update(activeIdx - 1);
+    if (e.key === 'ArrowRight') update(activeIdx + 1);
+  });
+
+  // Touch swipe
+  let tx = 0;
+  viewport.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+  viewport.addEventListener('touchend',   e => {
+    const diff = tx - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) update(diff > 0 ? activeIdx + 1 : activeIdx - 1);
+  }, { passive: true });
+
+  // Init — no transition on first paint
+  track.style.transition = 'none';
+  requestAnimationFrame(() => {
+    track.style.transform = `translateX(-${calcOffset(0)}px)`;
+    requestAnimationFrame(() => { track.style.transition = ''; });
+  });
+
+  // Reposition on resize
+  let resizeRaf;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => {
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${calcOffset(activeIdx)}px)`;
+      requestAnimationFrame(() => { track.style.transition = ''; });
+    });
+  });
+})();
+</script>
 </body>
 </html>
