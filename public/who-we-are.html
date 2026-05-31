@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who We Are — CVC Group</title>
+<title>Projects — CVC Group</title>
+<meta name="description" content="Selected retail, hospitality, and commercial projects delivered by CVC Group across Canada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
@@ -16,193 +17,97 @@
     <a href="index.html" class="logo"><img class="logo-svg" src="cvc.svg" alt="CVC Group" onerror="this.style.display='none'"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="who-we-are.html" class="active">Who We Are</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
       <li><a href="retail.html">Retail</a></li>
       <li><a href="hospitality.html">Hospitality</a></li>
       <li><a href="commercial.html">Commercial</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Let's Talk</a>
     <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt=""></div>
+  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80" alt=""></div>
   <div class="container page-hero-inner">
-    <div class="eyebrow rv">Who We Are</div>
-    <h1 class="rv rv-d1">Two Decades of Building<br><span class="italic-accent">Spaces That Matter.</span></h1>
-    <p class="rv rv-d2">CVC Group is a Concord, Ontario-based construction company with 22+ years of experience delivering exceptional retail, hospitality, and commercial environments across Canada.</p>
-    <div class="breadcrumb rv rv-d3">Home <span>/</span> Who We Are</div>
+    <div class="eyebrow rv">Projects</div>
+    <h1 class="rv rv-d1">Spaces We've<br><span class="italic-accent">Brought to Life.</span></h1>
+    <p class="rv rv-d2">A selection of recent retail, hospitality, and commercial work — each space built around a brand, a budget, and an opening date.</p>
+    <div class="breadcrumb rv rv-d3">Home <span>/</span> Projects</div>
   </div>
 </section>
 
-<!-- OUR STORY -->
-<section class="section">
-  <div class="container">
-    <div class="two-col">
-      <div class="two-col-img rv">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80" alt="CVC Group team">
-      </div>
-      <div class="two-col-text rv rv-d1">
-        <div class="eyebrow">Our Story</div>
-        <h2>Craftsmanship Backed<br>By <span class="italic-accent">Experience.</span></h2>
-        <p>For over 22 years, CVC Group has partnered with some of Canada's most recognized brands to design and build the environments where their stories come to life. From boutique retail to high-volume hospitality and complex commercial fit-outs, we've built our reputation one space at a time.</p>
-        <p>What started as a small team of trades has grown into a full-service construction partner — 265+ skilled tradespeople strong — with the depth to handle every phase from pre-construction planning to final turnover.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VALUES -->
 <section class="section section-dark">
   <div class="container">
-    <div class="section-head rv">
-      <div class="eyebrow">What We Stand For</div>
-      <h2>The Values That Guide Every Build.</h2>
+    <div class="filters rv">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="retail">Retail</button>
+      <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
     </div>
-    <div class="values">
-      <div class="value rv">
-        <div class="value-num">01</div>
-        <h3>Precision</h3>
-        <p>Every joint, finish, and detail is held to a standard that survives daily use and customer scrutiny — because spaces that feel "almost right" never do.</p>
-      </div>
-      <div class="value rv rv-d1">
-        <div class="value-num">02</div>
-        <h3>Partnership</h3>
-        <p>We work as an extension of your team. Transparent budgets, honest timelines, and proactive communication from kickoff through handover.</p>
-      </div>
-      <div class="value rv rv-d2">
-        <div class="value-num">03</div>
-        <h3>Pace</h3>
-        <p>Retail and hospitality run on opening dates. Our scheduling discipline and trade depth let us hit them — without cutting corners.</p>
-      </div>
-      <div class="value rv rv-d3">
-        <div class="value-num">04</div>
-        <h3>Craft</h3>
-        <p>Millwork, finishes, and feature installs are where good spaces become unforgettable ones. We sweat the parts that guests touch.</p>
-      </div>
-      <div class="value rv rv-d4">
-        <div class="value-num">05</div>
-        <h3>Continuity</h3>
-        <p>The same project lead from day one through punch-list. No handoffs that lose context, no relearning your brand mid-build.</p>
-      </div>
-      <div class="value rv rv-d4">
-        <div class="value-num">06</div>
-        <h3>Support</h3>
-        <p>The relationship doesn't end at turnover. Ongoing service ensures every space we deliver keeps performing for years.</p>
-      </div>
+
+    <div class="projects-grid">
+      <a href="#" class="proj-card rv" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&q=80" alt="Luxe Richmond Lounge">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Luxe Richmond Lounge</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d1" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Chillax & Co.">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Chillax &amp; Co.</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d2" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Ramona's Kitchen">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Ramona's Kitchen</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80" alt="Duo Patisserie & Café">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">Duo Patisserie &amp; Café</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d1" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=800&q=80" alt="LensCrafters Flagship">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">LensCrafters Flagship</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d2" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Sunglass Hut Rollout">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">Sunglass Hut Rollout</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Ray-Ban Toronto">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">Ray-Ban Toronto</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d1" data-cat="commercial">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Corporate HQ Concord">
+        <div class="proj-body"><span class="proj-cat">Commercial</span><div class="proj-title">Corporate HQ Concord</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d2" data-cat="commercial">
+        <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=800&q=80" alt="Vaughan Medical Centre">
+        <div class="proj-body"><span class="proj-cat">Commercial</span><div class="proj-title">Vaughan Medical Centre</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv" data-cat="hospitality">
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80" alt="Grill Gate">
+        <div class="proj-body"><span class="proj-cat">Hospitality</span><div class="proj-title">▲ Grill Gate</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d1" data-cat="commercial">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80" alt="Markham Studio Build">
+        <div class="proj-body"><span class="proj-cat">Commercial</span><div class="proj-title">Markham Studio Build</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
+      <a href="#" class="proj-card rv rv-d2" data-cat="retail">
+        <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80" alt="Boutique Square One">
+        <div class="proj-body"><span class="proj-cat">Retail</span><div class="proj-title">Boutique Square One</div><span class="proj-link">View Project <span>→</span></span></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- TIMELINE — Alternating -->
-<section class="section section-dark" style="padding-bottom:0">
-  <div class="container">
-    <div class="section-head rv">
-      <div class="eyebrow">Our Journey</div>
-      <h2>Milestones Along the Way.</h2>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" style="padding-top:0">
-  <div class="container">
-    <div class="timeline-alt">
-
-      <!-- 2003 — LEFT: content, RIGHT: image -->
-      <div class="tl-alt-item left rv">
-        <div class="tl-content">
-          <span class="tl-year-badge">2003</span>
-          <h4>CVC Group is Founded</h4>
-          <p>Started in Concord, Ontario with a small, focused crew and an uncompromising approach to quality retail fit-outs for local businesses.</p>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Founding">
-          </div>
-        </div>
-      </div>
-
-      <!-- 2009 — RIGHT: content, LEFT: image -->
-      <div class="tl-alt-item right rv">
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="National brands">
-          </div>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-content">
-          <span class="tl-year-badge">2009</span>
-          <h4>First National Brand Partnership</h4>
-          <p>Began long-term partnerships with multi-location retailers, expanding our capabilities and team depth across Ontario.</p>
-        </div>
-      </div>
-
-      <!-- 2014 — LEFT: content, RIGHT: image -->
-      <div class="tl-alt-item left rv">
-        <div class="tl-content">
-          <span class="tl-year-badge">2014</span>
-          <h4>Hospitality Division Launched</h4>
-          <p>Added dedicated hospitality expertise — restaurants, cafés, and lounges — bringing the finish quality and speed that opening-driven projects demand.</p>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Hospitality">
-          </div>
-        </div>
-      </div>
-
-      <!-- 2019 — RIGHT: stat card, LEFT: image -->
-      <div class="tl-alt-item right rv">
-        <div class="tl-visual">
-          <div class="tl-img-wrap">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Commercial">
-          </div>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-content">
-          <span class="tl-year-badge">2019</span>
-          <h4>Commercial Expansion</h4>
-          <p>Scaled into commercial interiors and office build-outs, completing our three-pillar service offering: retail, hospitality, commercial.</p>
-        </div>
-      </div>
-
-      <!-- 2025 — LEFT: content, RIGHT: stat card -->
-      <div class="tl-alt-item left rv">
-        <div class="tl-content">
-          <span class="tl-year-badge">2025</span>
-          <h4>189+ Projects Delivered</h4>
-          <p>Continuing to build long-term partnerships with brands across Canada. 265+ skilled tradespeople and counting — still building spaces that matter.</p>
-        </div>
-        <div class="tl-marker"><div class="tl-marker-dot"></div></div>
-        <div class="tl-visual">
-          <div class="tl-stat-card">
-            <div class="tl-stat-num">189+</div>
-            <div class="tl-stat-label">Projects Delivered</div>
-            <div style="margin-top:20px;height:1px;background:var(--line)"></div>
-            <div class="tl-stat-num" style="margin-top:20px;font-size:clamp(32px,4vw,48px)">265+</div>
-            <div class="tl-stat-label">Skilled Tradespeople</div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /timeline-alt -->
-  </div>
-</section>
-
-<!-- PAGE CTA — Rebalanced -->
 <section class="page-cta">
   <div class="page-cta-img rv">
-    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80" alt="Modern interior">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80" alt="">
   </div>
   <div class="page-cta-content rv rv-d1">
-    <div class="eyebrow">Ready to Work Together?</div>
+    <div class="eyebrow">Have a Project in Mind?</div>
     <h2>Let's Build<br><span class="italic-accent">Something Great.</span></h2>
-    <p>Tell us about your vision and our team will help bring it to life — from concept through final turnover.</p>
+    <p>Bring us your vision and we'll help you shape it into a space that performs — on time, on budget, and beyond expectation.</p>
     <a href="contact.html" class="btn btn-primary">Start Your Project <span class="arr">→</span></a>
   </div>
 </section>

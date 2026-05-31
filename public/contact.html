@@ -1,151 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — CVC Group</title>
-<meta name="description" content="Talk to CVC Group about your retail, hospitality, or commercial construction project. Concord, Ontario.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+/* ============ NAV SCROLL + MOBILE TOGGLE ============ */
+const nav = document.querySelector('.nav');
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
 
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="logo"><img class="logo-svg" src="cvc.svg" alt="CVC Group" onerror="this.style.display='none'"></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="who-we-are.html">Who We Are</a></li>
-      <li><a href="retail.html">Retail</a></li>
-      <li><a href="hospitality.html">Hospitality</a></li>
-      <li><a href="commercial.html">Commercial</a></li>
-      <li><a href="projects.html">Projects</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta">Let's Talk</a>
-    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 30) nav?.classList.add('scrolled');
+  else nav?.classList.remove('scrolled');
+});
 
-<section class="page-hero">
-  <div class="page-hero-bg"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt=""></div>
-  <div class="container page-hero-inner">
-    <div class="eyebrow rv">Contact</div>
-    <h1 class="rv rv-d1">Let's Build<br><span class="italic-accent">Something Amazing.</span></h1>
-    <p class="rv rv-d2">Tell us about your project. Our team will follow up within one business day to schedule a discovery call.</p>
-    <div class="breadcrumb rv rv-d3">Home <span>/</span> Contact</div>
-  </div>
-</section>
+burger?.addEventListener('click', () => {
+  navLinks?.classList.toggle('open');
+});
 
-<section>
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <div class="eyebrow rv" style="margin-bottom:14px">Get in Touch</div>
-      <h2 class="rv rv-d1">A Conversation is the<br><span class="italic-accent">First Build Step.</span></h2>
-      <p class="rv rv-d2">Whether you've got a fully scoped project or a napkin sketch, we'd love to hear what you're planning. The faster we understand the brief, the better we can advise on budget, timeline, and what's actually feasible in your space.</p>
+/* ============ REVEAL ON SCROLL ============ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-      <div class="contact-card rv rv-d2">
-        <div class="contact-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <div>
-          <h4>Phone</h4>
-          <p>+1 (905) 655-2412<br>Mon–Fri, 8:00am – 5:00pm ET</p>
-        </div>
-      </div>
+/* ============ HERO SLIDER ============ */
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.hero-dot');
+const prevBtn = document.querySelector('.hero-arrow.prev');
+const nextBtn = document.querySelector('.hero-arrow.next');
+let current = 0;
+let timer = null;
 
-      <div class="contact-card rv rv-d3">
-        <div class="contact-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16"/><path d="m22 6-10 7L2 6"/></svg>
-        </div>
-        <div>
-          <h4>Email</h4>
-          <p>info@cvcgrp.com<br>projects@cvcgrp.com</p>
-        </div>
-      </div>
+function goTo(i) {
+  if (!slides.length) return;
+  current = (i + slides.length) % slides.length;
+  slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+  dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+}
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+function restart() {
+  clearInterval(timer);
+  timer = setInterval(next, 6500);
+}
+if (slides.length) {
+  dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); restart(); }));
+  nextBtn?.addEventListener('click', () => { next(); restart(); });
+  prevBtn?.addEventListener('click', () => { prev(); restart(); });
+  restart();
+}
 
-      <div class="contact-card rv rv-d3">
-        <div class="contact-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <div>
-          <h4>Office</h4>
-          <p>38 - 411 Four Valley Dr<br>Concord, ON L4K 5Z3</p>
-        </div>
-      </div>
-    </div>
+/* ============ STAT COUNTERS ============ */
+const statNums = document.querySelectorAll('[data-count]');
+const statObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.count, 10);
+    const dur = 1600;
+    const start = performance.now();
+    const suffix = el.dataset.suffix || '';
+    function step(t) {
+      const p = Math.min((t - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.firstChild.nodeValue = Math.floor(target * eased);
+      if (p < 1) requestAnimationFrame(step);
+      else el.firstChild.nodeValue = target;
+    }
+    requestAnimationFrame(step);
+    statObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+statNums.forEach(n => statObs.observe(n));
 
-    <div class="contact-form rv rv-d1">
-      <h3>Start Your Project.</h3>
-      <div class="form-grid">
-        <input type="text" class="form-input" placeholder="Full Name">
-        <input type="tel" class="form-input" placeholder="Phone Number">
-      </div>
-      <div class="form-grid">
-        <input type="email" class="form-input" placeholder="Email Address*">
-        <input type="text" class="form-input" placeholder="Company">
-      </div>
-      <div class="form-grid">
-        <select class="form-select">
-          <option>Service Required</option>
-          <option>Retail Build-out</option>
-          <option>Hospitality</option>
-          <option>Commercial</option>
-          <option>Multi-location Rollout</option>
-        </select>
-        <select class="form-select">
-          <option>Project Timeline</option>
-          <option>Within 3 months</option>
-          <option>3–6 months</option>
-          <option>6–12 months</option>
-          <option>Exploratory</option>
-        </select>
-      </div>
-      <textarea class="form-textarea" placeholder="Tell us about your project — location, scope, vision..."></textarea>
-      <button class="btn btn-primary" style="align-self:flex-start">Send Message <span class="arr">→</span></button>
-    </div>
-  </div>
-</section>
+/* ============ PROJECT FILTERS ============ */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.projects-grid .proj-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    projectCards.forEach(card => {
+      const cat = card.dataset.cat;
+      const show = f === 'all' || cat === f;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
 
-<section class="brands">
-  <div class="container">
-    <div class="brands-head rv">Proudly Building Spaces for Incredible Brands</div>
-    <div class="brands-row rv rv-d1">
-      <div class="brand-logo sans">▲ Grill Gate</div>
-      <div class="brand-logo sans">Ramona's Kitchen</div>
-      <div class="brand-logo">Chillax &amp; Co.</div>
-      <div class="brand-logo sans">DUO</div>
-      <div class="brand-logo sans">LensCrafters</div>
-      <div class="brand-logo sans">○ sunglass hut</div>
-      <div class="brand-logo">Ray-Ban</div>
-    </div>
-  </div>
-</section>
+/* ============ TIMELINE REVEAL ============ */
+const tlItems = document.querySelectorAll('.tl-alt-item');
+if (tlItems.length) {
+  const tlIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        tlIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  tlItems.forEach(el => tlIO.observe(el));
+}
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-inner">
-      <a href="index.html" class="logo"><img class="logo-svg" src="cvc.svg" alt="CVC Group" onerror="this.style.display='none'"></a>
-      <div class="footer-links">
-        <a href="index.html">Home</a><a href="who-we-are.html">Who We Are</a><a href="retail.html">Retail</a><a href="hospitality.html">Hospitality</a><a href="commercial.html">Commercial</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-contact">
-        <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+1 (905) 655-2412</div>
-        <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16"/><path d="m22 6-10 7L2 6"/></svg>info@cvcgrp.com</div>
-        <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>38 - 411 Four Valley Dr, Concord, ON L4K 5Z3</div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2025 CVC Group. All Rights Reserved.</div>
-      <div class="footer-social">
-        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-      </div>
-    </div>
-  </div>
-</footer>
+/* ============ ABOUT FEATURE COUNTER ============ */
+const afNums = document.querySelectorAll('.about-feature-big-num[data-count]');
+if (afNums.length) {
+  const afIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur = 1600;
+      const start = performance.now();
+      function step(t) {
+        const p = Math.min((t - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(step);
+      afIO.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  afNums.forEach(n => afIO.observe(n));
+}
 
-<script src="js/main.js"></script>
-</body>
-</html>
+/* ============ HOME CONTACT FORM ============ */
+const homeForm = document.querySelector('.home-contact-form');
+homeForm?.addEventListener('submit', e => {
+  e.preventDefault();
+  homeForm.innerHTML = '<p style="color:var(--gold);font-size:15px;line-height:1.7">Thank you — we\'ll be in touch shortly.</p>';
+});
