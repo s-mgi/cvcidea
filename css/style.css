@@ -386,11 +386,13 @@ section { position: relative; }
 /* Left: bg image + gradient overlay */
 .home-contact-left {
   position: relative; overflow: hidden;
+  min-height: 500px;
   padding: 80px 64px;
   display: flex; flex-direction: column; justify-content: flex-end; gap: 0;
 }
 .home-contact-left-bg {
   position: absolute; inset: 0;
+  width: 100%; height: 100%;
   background-size: cover; background-position: center; z-index: 0;
 }
 .home-contact-left-bg::after {
