@@ -394,11 +394,12 @@ section { position: relative; }
   position: absolute; top: 0; left: 0; right: 0; bottom: 0;
   background-size: cover; background-position: center; z-index: 0;
 }
-.home-contact-left-bg::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(10,12,15,.2) 0%, rgba(10,12,15,.6) 50%, rgba(10,12,15,.92) 100%);
+/* Gradient overlay sits on the left column itself, above the bg image */
+.home-contact-left::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(10,12,15,.15) 0%, rgba(10,12,15,.55) 50%, rgba(10,12,15,.88) 100%);
 }
-.home-contact-left > * { position: relative; z-index: 1; }
+.home-contact-left > * { position: relative; z-index: 2; }
 .home-contact-left .eyebrow { color: var(--gold-lt); margin-bottom: 18px; }
 .home-contact-left h2 { font-size: clamp(26px,3vw,44px); color: #fff; margin-bottom: 16px; line-height: 1.1; }
 .home-contact-left > p { color: rgba(245,241,234,.72); font-size: 15px; line-height: 1.7; max-width: 34ch; margin-bottom: 32px; }
