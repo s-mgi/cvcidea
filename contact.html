@@ -213,10 +213,9 @@
   <div id="cvc-map-wrap">
     <div id="cvc-sidebar">
       <div id="cvc-filters">
-        <button class="cvc-filter-btn active" data-cat="all"><span class="mdot" style="background:#c8a96e"></span>All Projects</button>
+        <button class="cvc-filter-btn active" data-cat="all"><span class="mdot" style="background:#c8a96e"></span>All Locations</button>
         <button class="cvc-filter-btn" data-cat="Retail"><span class="mdot" style="background:#c8a96e"></span>Retail</button>
         <button class="cvc-filter-btn" data-cat="Hospitality"><span class="mdot" style="background:#7eb8a4"></span>Hospitality</button>
-        <button class="cvc-filter-btn" data-cat="Commercial"><span class="mdot" style="background:#8fa8c8"></span>Commercial</button>
       </div>
       <div id="cvc-loc-list"></div>
       <div id="cvc-count"></div>
@@ -227,21 +226,55 @@
   <script>
   (function(){
     const PROJECTS = [
-      { id:1,  name:"Yorkdale Fashion District", city:"Toronto, ON",       cat:"Retail",      lat:43.7247, lng:-79.4511, desc:"Multi-tenant retail fit-out, 12,400 sq ft. Completed 2023." },
-      { id:2,  name:"Vaughan Mills Expansion",   city:"Vaughan, ON",       cat:"Retail",      lat:43.8378, lng:-79.5378, desc:"Phase 2 tenant improvements across three anchor units." },
-      { id:3,  name:"Erin Mills Town Centre",    city:"Mississauga, ON",   cat:"Retail",      lat:43.5506, lng:-79.7287, desc:"End-to-end retail buildout, 8,800 sq ft." },
-      { id:4,  name:"Square One Storefront",     city:"Mississauga, ON",   cat:"Retail",      lat:43.5930, lng:-79.6441, desc:"Full interior renovation and fixture installation." },
-      { id:5,  name:"The Westin King St",        city:"Toronto, ON",       cat:"Hospitality", lat:43.6474, lng:-79.3844, desc:"Lobby and conference suite renovation, luxury finishes." },
-      { id:6,  name:"Pantages Hotel Suites",     city:"Toronto, ON",       cat:"Hospitality", lat:43.6536, lng:-79.3794, desc:"16-suite corridor and common area refresh." },
-      { id:7,  name:"Niagara Falls Marriott",    city:"Niagara Falls, ON", cat:"Hospitality", lat:43.0921, lng:-79.0742, desc:"Restaurant and event hall fit-out, 6,200 sq ft." },
-      { id:8,  name:"Pearson Gateway Hotel",     city:"Mississauga, ON",   cat:"Hospitality", lat:43.6777, lng:-79.6248, desc:"Full F&B and lobby renovation for airport-adjacent hotel." },
-      { id:9,  name:"900 King W Office",         city:"Toronto, ON",       cat:"Commercial",  lat:43.6445, lng:-79.4044, desc:"Open-plan office fit-out, 22,000 sq ft, LEED CI." },
-      { id:10, name:"Concord Corporate Park",    city:"Concord, ON",       cat:"Commercial",  lat:43.8014, lng:-79.4810, desc:"3-building campus interior renovation and base build." },
-      { id:11, name:"Barrie Commerce Centre",    city:"Barrie, ON",        cat:"Commercial",  lat:44.3894, lng:-79.6903, desc:"Class A office conversion, 14,500 sq ft." },
-      { id:12, name:"Hamilton Commerce Tower",   city:"Hamilton, ON",      cat:"Commercial",  lat:43.2557, lng:-79.8711, desc:"Tenant improvement package, floors 4–7." },
+      { id:1,  name:"La Senza",           city:"St. John's, NL",        cat:"Retail",      lat:47.5759, lng:-52.7318, desc:"48 Kenmount Rd unit L-28, St. John's, NL A1B 1W3" },
+      { id:2,  name:"Bath and Body Works",city:"Pointe-Claire, QC",     cat:"Retail",      lat:45.4582, lng:-73.8175, desc:"6801 Trans-Canada Hwy, Pointe-Claire, QC H9R 1C5" },
+      { id:3,  name:"LensCrafters",       city:"Pointe-Claire, QC",     cat:"Retail",      lat:45.4585, lng:-73.8168, desc:"6815 Trans-Canada Hwy C19, Pointe-Claire, QC H9R 1C4" },
+      { id:4,  name:"Ray-Ban",            city:"Montreal, QC",          cat:"Retail",      lat:45.4888, lng:-73.6642, desc:"5050 Chem. de la Côte-de-Liesse Unit 2400, Montreal, QC H4P 0C9" },
+      { id:5,  name:"M&M Food Market",    city:"Saint-Hubert, QC",      cat:"Retail",      lat:45.5017, lng:-73.4180, desc:"6450 Grande Allée, Saint-Hubert, QC J3Y 2S3" },
+      { id:6,  name:"Bath and Body Works",city:"Saint John, NB",        cat:"Retail",      lat:45.2733, lng:-66.0259, desc:"519 Westmorland Rd, Saint John, NB E2J 3W9" },
+      { id:7,  name:"M&M Food Market",    city:"Toronto, ON",           cat:"Retail",      lat:43.6384, lng:-79.4189, desc:"137 E Liberty St, Toronto, ON M6K 3P6" },
+      { id:8,  name:"Chillax & Co.",      city:"Richmond Hill, ON",     cat:"Hospitality", lat:43.8828, lng:-79.4287, desc:"9580 Yonge St Unit 101, Richmond Hill, ON L4C 1V6" },
+      { id:9,  name:"Sunglass Hut",       city:"Toronto, ON",           cat:"Retail",      lat:43.6534, lng:-79.3801, desc:"218 Yonge St, Toronto, ON M5B 2H6" },
+      { id:10, name:"Wings Up",           city:"Mississauga, ON",       cat:"Hospitality", lat:43.5134, lng:-79.6484, desc:"1900 Fowler Dr, Mississauga, ON L5K 1T7" },
+      { id:11, name:"Lush Cosmetics",     city:"Etobicoke, ON",         cat:"Retail",      lat:43.6440, lng:-79.5648, desc:"25 The West Mall, Etobicoke, ON M9C 1B8" },
+      { id:12, name:"Lush Cosmetics",     city:"Waterloo, ON",          cat:"Retail",      lat:43.4934, lng:-80.5220, desc:"550 King St N A08, Waterloo, ON N2L 5W6" },
+      { id:13, name:"Wings Up",           city:"Guelph, ON",            cat:"Hospitality", lat:43.5658, lng:-80.2317, desc:"328 Speedvale Ave E, Guelph, ON N1E 1N5" },
+      { id:14, name:"Splittsville",       city:"Hamilton, ON",          cat:"Hospitality", lat:43.2020, lng:-79.8430, desc:"1525 Stone Church Rd E, Hamilton, ON L8W 3P8" },
+      { id:15, name:"Cobs Bread",         city:"Bolton, ON",            cat:"Retail",      lat:43.8763, lng:-79.7310, desc:"301 Queen St S, Bolton, ON L7E 2B1" },
+      { id:16, name:"Cobs Bread",         city:"Stoney Creek, ON",      cat:"Retail",      lat:43.2223, lng:-79.7519, desc:"516 Centennial Pkwy N Unit 2, Hamilton, ON L1E 2R7" },
+      { id:17, name:"Cobs Bread",         city:"St. Thomas, ON",        cat:"Retail",      lat:42.7770, lng:-81.1811, desc:"1025 Talbot St, St Thomas, ON N5P 0G8" },
+      { id:18, name:"Splittsville",       city:"Guelph, ON",            cat:"Hospitality", lat:43.5580, lng:-80.2735, desc:"253 Woodlawn Rd W, Guelph, ON N1H 8J1" },
+      { id:19, name:"Splittsville",       city:"Burlington, ON",        cat:"Hospitality", lat:43.3571, lng:-79.7960, desc:"830 Laurentian Dr, Burlington, ON L7N 3V6" },
+      { id:20, name:"Splittsville",       city:"Waterloo, ON",          cat:"Hospitality", lat:43.4678, lng:-80.5212, desc:"341 Marsland Dr Unit 1, Waterloo, ON N2J 3Z2" },
+      { id:21, name:"American Eagle",     city:"Saskatoon, SK",         cat:"Retail",      lat:52.1322, lng:-106.6700, desc:"21st St and First Ave, Saskatoon, SK S7K 1J9" },
+      { id:22, name:"Bath and Body Works",city:"Saskatoon, SK",         cat:"Retail",      lat:52.1540, lng:-106.6723, desc:"1709 Preston Ave N #110, Saskatoon, SK S7N 4V2" },
+      { id:23, name:"Sunglass Hut",       city:"Saskatoon, SK",         cat:"Retail",      lat:52.1318, lng:-106.6692, desc:"21st St & 1 Ave S Spc T-011, Saskatoon, SK S7K 1J9" },
+      { id:24, name:"LensCrafters",       city:"Toronto, ON",           cat:"Retail",      lat:43.6538, lng:-79.3793, desc:"220 Yonge St B217B, Toronto, ON M5B 2H1" },
+      { id:25, name:"Sunglass Hut",       city:"Markham, ON",           cat:"Retail",      lat:43.8465, lng:-79.3356, desc:"5000 Hwy 7 Spc #2095, Markham, ON L3R 4M9" },
+      { id:26, name:"Sunglass Hut",       city:"Niagara-on-the-Lake, ON",cat:"Retail",    lat:43.2553, lng:-79.0715, desc:"300 Taylor Rd SS4, Niagara-on-the-Lake, ON L0S 1J0" },
+      { id:27, name:"Pearle Vision",      city:"Thunder Bay, ON",       cat:"Retail",      lat:48.3809, lng:-89.2477, desc:"1000 Fort William Rd, Thunder Bay, ON P7B 6B9" },
+      { id:28, name:"LensCrafters",       city:"Windsor, ON",           cat:"Retail",      lat:42.2880, lng:-83.0530, desc:"3100 Howard Ave SS3, Windsor, ON N8X 3Y8" },
+      { id:29, name:"LensCrafters",       city:"Edmonton, AB",          cat:"Retail",      lat:53.5844, lng:-113.4902, desc:"109th St & Princess Elizabeth #790, Edmonton, AB T5G 3A6" },
+      { id:30, name:"LensCrafters",       city:"Calgary, AB",           cat:"Retail",      lat:51.0836, lng:-114.1787, desc:"3625 Shaganappi Trail NW E026A, Calgary, AB T3A 0E2" },
+      { id:31, name:"Oakley",             city:"Calgary, AB",           cat:"Retail",      lat:50.9600, lng:-114.0750, desc:"6455 Macleod Trl SW #1273, Calgary, AB T2H 0K8" },
+      { id:32, name:"LensCrafters",       city:"Calgary, AB (South)",   cat:"Retail",      lat:50.9598, lng:-114.0758, desc:"6455 Macleod Trl SW, Calgary, AB T2H 0K8" },
+      { id:33, name:"LensCrafters",       city:"Calgary, AB (SE)",      cat:"Retail",      lat:50.9115, lng:-114.0480, desc:"100 Anderson Rd SE Spc 144, Calgary, AB T2J 3V1" },
+      { id:34, name:"Stitch It",          city:"Calgary, AB",           cat:"Retail",      lat:51.0839, lng:-114.1791, desc:"3625 Shaganappi Trail NW, Calgary, AB T3A 2N1" },
+      { id:35, name:"Lush Cosmetics",     city:"Calgary, AB",           cat:"Retail",      lat:51.0841, lng:-114.1793, desc:"3625 Shaganappi Trail NW #P054, Calgary, AB T3A 0E2" },
+      { id:36, name:"Sunglass Hut",       city:"Vancouver, BC",         cat:"Retail",      lat:49.2837, lng:-123.1230, desc:"1015 Robson St, Vancouver, BC V6E 1A9" },
+      { id:37, name:"Bath and Body Works",city:"Vancouver, BC",         cat:"Retail",      lat:49.2844, lng:-123.1168, desc:"701 W Georgia St, Vancouver, BC V7Y 1A1" },
+      { id:38, name:"Pearle Vision",      city:"Victoria, BC",          cat:"Retail",      lat:48.4408, lng:-123.3530, desc:"1644 Hillside Ave #24, Victoria, BC V8T 2C5" },
+      { id:39, name:"Sunglass Hut",       city:"Prince George, BC",     cat:"Retail",      lat:53.9120, lng:-122.7497, desc:"3055 Massey Dr #21, Prince George, BC V2N 2S9" },
+      { id:40, name:"LensCrafters",       city:"Pittsburgh, PA",        cat:"Retail",      lat:40.4420, lng:-80.0907, desc:"100 Robinson Centre Dr #2870, Pittsburgh, PA 15205" },
+      { id:41, name:"Sunglass Hut",       city:"Tucson, AZ",            cat:"Retail",      lat:32.3473, lng:-110.9748, desc:"4500 N Oracle Rd #447, Tucson, AZ 85705" },
+      { id:42, name:"Sunglass Hut",       city:"Phoenix, AZ",           cat:"Retail",      lat:33.4804, lng:-112.2224, desc:"7611 W Thomas Rd Spc C38, Phoenix, AZ 85033" },
+      { id:43, name:"Sunglass Hut",       city:"Phoenix, AZ",           cat:"Retail",      lat:33.5095, lng:-112.0279, desc:"2410 E Camelback Rd, Phoenix, AZ 85016" },
+      { id:44, name:"LensCrafters",       city:"Honolulu, HI",          cat:"Retail",      lat:21.2894, lng:-157.8397, desc:"1450 Ala Moana Blvd Suite 3053, Honolulu, HI 96814" },
+      { id:45, name:"Sunglass Hut",       city:"Anchorage, AK",         cat:"Retail",      lat:61.1622, lng:-149.9003, desc:"800 E Dimond Blvd Suite 125A, Anchorage, AK 99515" },
+      { id:46, name:"L'Occitane",         city:"Victor, NY",            cat:"Retail",      lat:43.0059, lng:-77.4100,  desc:"7979 Pittsford Victor Rd Unit 362, Victor, NY 14564" },
     ];
 
-    const map = L.map('cvc-map', { zoomControl:false }).setView([43.75,-79.55],8);
+    const map = L.map('cvc-map', { zoomControl:false }).setView([52,-96],3);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
       attribution:'© OpenStreetMap © CARTO', subdomains:'abcd', maxZoom:19
     }).addTo(map);
