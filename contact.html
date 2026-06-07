@@ -107,6 +107,209 @@
   </div>
 </section>
 
+<section class="map-section">
+  <div class="container rv rv-d1" style="margin-bottom:32px">
+    <div class="eyebrow">Our Reach</div>
+    <h2>Project Locations<br><span class="italic-accent">Across Ontario.</span></h2>
+  </div>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    .map-section { padding: 80px 0 0; }
+    #cvc-map-wrap {
+      display: flex;
+      height: 560px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    #cvc-sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background: #0e0f0e;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    #cvc-filters {
+      padding: 20px 20px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .cvc-filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #7a7870;
+      font-family: 'Jost', 'Manrope', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 7px 12px;
+      cursor: pointer;
+      transition: all 0.18s;
+      text-align: left;
+    }
+    .cvc-filter-btn .mdot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .cvc-filter-btn.active[data-cat="all"]         { border-color: rgba(180,144,80,0.5); color: #c8a96e; background: rgba(200,169,110,0.06); }
+    .cvc-filter-btn.active[data-cat="Retail"]      { border-color: rgba(200,169,110,0.4); color: #c8a96e; background: rgba(200,169,110,0.08); }
+    .cvc-filter-btn.active[data-cat="Hospitality"] { border-color: rgba(126,184,164,0.4); color: #7eb8a4; background: rgba(126,184,164,0.08); }
+    .cvc-filter-btn.active[data-cat="Commercial"]  { border-color: rgba(143,168,200,0.4); color: #8fa8c8; background: rgba(143,168,200,0.08); }
+    .cvc-filter-btn:hover { border-color: rgba(200,169,110,0.3); color: #e8e4dc; }
+    #cvc-loc-list { flex:1; overflow-y:auto; }
+    #cvc-loc-list::-webkit-scrollbar { width:3px; }
+    #cvc-loc-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); }
+    .cvc-loc-item {
+      padding: 12px 20px;
+      cursor: pointer;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .cvc-loc-item:hover { background: rgba(255,255,255,0.03); }
+    .cvc-loc-item.active { background: rgba(200,169,110,0.07); border-left-color: #c8a96e; }
+    .cvc-loc-cat { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; margin-bottom:2px; font-family:'Manrope',sans-serif; }
+    .cvc-loc-item[data-cat="Retail"]      .cvc-loc-cat { color:#c8a96e; }
+    .cvc-loc-item[data-cat="Hospitality"] .cvc-loc-cat { color:#7eb8a4; }
+    .cvc-loc-item[data-cat="Commercial"]  .cvc-loc-cat { color:#8fa8c8; }
+    .cvc-loc-name { font-size:12px; color:#e8e4dc; font-family:'Manrope',sans-serif; font-weight:400; margin-bottom:1px; }
+    .cvc-loc-city { font-size:10px; color:#7a7870; font-family:'Manrope',sans-serif; }
+    #cvc-count { padding:9px 20px; font-size:10px; color:#5a5850; border-top:1px solid rgba(255,255,255,0.07); font-family:'Manrope',sans-serif; letter-spacing:0.06em; }
+    #cvc-map { flex:1; }
+    .leaflet-tile-pane { filter: brightness(0.82) saturate(0.55) contrast(1.05); }
+    .leaflet-popup-content-wrapper {
+      background: #161714;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+      color: #e8e4dc;
+      font-family: 'Manrope', sans-serif;
+      padding: 0;
+    }
+    .leaflet-popup-tip-container { display:none; }
+    .leaflet-popup-close-button { color: #7a7870 !important; top:10px !important; right:12px !important; }
+    .leaflet-popup-close-button:hover { color: #e8e4dc !important; }
+    .leaflet-popup-content { margin:0; width:210px !important; }
+    .cvc-popup { padding:18px 18px 16px; }
+    .cvc-popup-cat { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; margin-bottom:5px; }
+    .cvc-popup-cat.Retail      { color:#c8a96e; }
+    .cvc-popup-cat.Hospitality { color:#7eb8a4; }
+    .cvc-popup-cat.Commercial  { color:#8fa8c8; }
+    .cvc-popup-name { font-size:14px; font-weight:500; margin-bottom:3px; }
+    .cvc-popup-city { font-size:11px; color:#7a7870; margin-bottom:10px; }
+    .cvc-popup-desc { font-size:11px; color:#a09c94; line-height:1.6; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px; }
+    .cvc-mk { width:11px; height:11px; border-radius:50%; border:2px solid rgba(0,0,0,0.35); }
+    .cvc-mk.Retail      { background:#c8a96e; box-shadow:0 0 8px rgba(200,169,110,0.5); }
+    .cvc-mk.Hospitality { background:#7eb8a4; box-shadow:0 0 8px rgba(126,184,164,0.5); }
+    .cvc-mk.Commercial  { background:#8fa8c8; box-shadow:0 0 8px rgba(143,168,200,0.5); }
+  </style>
+
+  <div id="cvc-map-wrap">
+    <div id="cvc-sidebar">
+      <div id="cvc-filters">
+        <button class="cvc-filter-btn active" data-cat="all"><span class="mdot" style="background:#c8a96e"></span>All Projects</button>
+        <button class="cvc-filter-btn" data-cat="Retail"><span class="mdot" style="background:#c8a96e"></span>Retail</button>
+        <button class="cvc-filter-btn" data-cat="Hospitality"><span class="mdot" style="background:#7eb8a4"></span>Hospitality</button>
+        <button class="cvc-filter-btn" data-cat="Commercial"><span class="mdot" style="background:#8fa8c8"></span>Commercial</button>
+      </div>
+      <div id="cvc-loc-list"></div>
+      <div id="cvc-count"></div>
+    </div>
+    <div id="cvc-map"></div>
+  </div>
+
+  <script>
+  (function(){
+    const PROJECTS = [
+      { id:1,  name:"Yorkdale Fashion District", city:"Toronto, ON",       cat:"Retail",      lat:43.7247, lng:-79.4511, desc:"Multi-tenant retail fit-out, 12,400 sq ft. Completed 2023." },
+      { id:2,  name:"Vaughan Mills Expansion",   city:"Vaughan, ON",       cat:"Retail",      lat:43.8378, lng:-79.5378, desc:"Phase 2 tenant improvements across three anchor units." },
+      { id:3,  name:"Erin Mills Town Centre",    city:"Mississauga, ON",   cat:"Retail",      lat:43.5506, lng:-79.7287, desc:"End-to-end retail buildout, 8,800 sq ft." },
+      { id:4,  name:"Square One Storefront",     city:"Mississauga, ON",   cat:"Retail",      lat:43.5930, lng:-79.6441, desc:"Full interior renovation and fixture installation." },
+      { id:5,  name:"The Westin King St",        city:"Toronto, ON",       cat:"Hospitality", lat:43.6474, lng:-79.3844, desc:"Lobby and conference suite renovation, luxury finishes." },
+      { id:6,  name:"Pantages Hotel Suites",     city:"Toronto, ON",       cat:"Hospitality", lat:43.6536, lng:-79.3794, desc:"16-suite corridor and common area refresh." },
+      { id:7,  name:"Niagara Falls Marriott",    city:"Niagara Falls, ON", cat:"Hospitality", lat:43.0921, lng:-79.0742, desc:"Restaurant and event hall fit-out, 6,200 sq ft." },
+      { id:8,  name:"Pearson Gateway Hotel",     city:"Mississauga, ON",   cat:"Hospitality", lat:43.6777, lng:-79.6248, desc:"Full F&B and lobby renovation for airport-adjacent hotel." },
+      { id:9,  name:"900 King W Office",         city:"Toronto, ON",       cat:"Commercial",  lat:43.6445, lng:-79.4044, desc:"Open-plan office fit-out, 22,000 sq ft, LEED CI." },
+      { id:10, name:"Concord Corporate Park",    city:"Concord, ON",       cat:"Commercial",  lat:43.8014, lng:-79.4810, desc:"3-building campus interior renovation and base build." },
+      { id:11, name:"Barrie Commerce Centre",    city:"Barrie, ON",        cat:"Commercial",  lat:44.3894, lng:-79.6903, desc:"Class A office conversion, 14,500 sq ft." },
+      { id:12, name:"Hamilton Commerce Tower",   city:"Hamilton, ON",      cat:"Commercial",  lat:43.2557, lng:-79.8711, desc:"Tenant improvement package, floors 4–7." },
+    ];
+
+    const map = L.map('cvc-map', { zoomControl:false }).setView([43.75,-79.55],8);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+      attribution:'© OpenStreetMap © CARTO', subdomains:'abcd', maxZoom:19
+    }).addTo(map);
+    L.control.zoom({ position:'bottomright' }).addTo(map);
+
+    let activeFilter = 'all', activeId = null;
+    const markers = {};
+
+    function mkIcon(cat){
+      return L.divIcon({ className:'', html:`<div class="cvc-mk ${cat}"></div>`, iconSize:[11,11], iconAnchor:[5,5], popupAnchor:[0,-8] });
+    }
+
+    PROJECTS.forEach(p => {
+      const m = L.marker([p.lat,p.lng],{icon:mkIcon(p.cat)}).addTo(map);
+      m.bindPopup(`<div class="cvc-popup"><div class="cvc-popup-cat ${p.cat}">${p.cat}</div><div class="cvc-popup-name">${p.name}</div><div class="cvc-popup-city">${p.city}</div><div class="cvc-popup-desc">${p.desc}</div></div>`,{maxWidth:230,minWidth:210});
+      m.on('click',()=>setActive(p.id,false));
+      markers[p.id]=m;
+    });
+
+    function buildList(){
+      const list=document.getElementById('cvc-loc-list');
+      list.innerHTML='';
+      const vis=PROJECTS.filter(p=>activeFilter==='all'||p.cat===activeFilter);
+      vis.forEach(p=>{
+        const el=document.createElement('div');
+        el.className='cvc-loc-item'+(p.id===activeId?' active':'');
+        el.dataset.cat=p.cat;
+        el.innerHTML=`<div class="cvc-loc-cat">${p.cat}</div><div class="cvc-loc-name">${p.name}</div><div class="cvc-loc-city">${p.city}</div>`;
+        el.addEventListener('click',()=>setActive(p.id,true));
+        list.appendChild(el);
+      });
+      document.getElementById('cvc-count').textContent=`${vis.length} of ${PROJECTS.length} locations`;
+    }
+
+    function applyFilter(){
+      PROJECTS.forEach(p=>{
+        const show=activeFilter==='all'||p.cat===activeFilter;
+        if(show){ if(!map.hasLayer(markers[p.id])) markers[p.id].addTo(map); }
+        else { if(map.hasLayer(markers[p.id])){ map.removeLayer(markers[p.id]); if(markers[p.id].isPopupOpen()) markers[p.id].closePopup(); } }
+      });
+    }
+
+    function setActive(id,pan){
+      activeId=id;
+      const p=PROJECTS.find(x=>x.id===id);
+      if(pan) map.setView([p.lat,p.lng],Math.max(map.getZoom(),12),{animate:true});
+      markers[id].openPopup();
+      document.querySelectorAll('.cvc-loc-item').forEach(el=>el.classList.remove('active'));
+      const match=[...document.querySelectorAll('.cvc-loc-item')].find(el=>el.querySelector('.cvc-loc-name')?.textContent===p.name);
+      if(match){ match.classList.add('active'); match.scrollIntoView({block:'nearest',behavior:'smooth'}); }
+    }
+
+    map.on('popupclose',()=>{ activeId=null; document.querySelectorAll('.cvc-loc-item').forEach(el=>el.classList.remove('active')); });
+
+    document.querySelectorAll('.cvc-filter-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        activeFilter=btn.dataset.cat;
+        document.querySelectorAll('.cvc-filter-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(); buildList();
+      });
+    });
+
+    buildList();
+  })();
+  </script>
+</section>
+
 <section class="brands-grid-section">
   <div class="container">
     <div class="brands-grid-head rv">Proudly Building Spaces for Incredible Brands</div>
